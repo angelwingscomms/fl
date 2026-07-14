@@ -1,0 +1,38 @@
+# Cloud Build: build image -> Artifact Registry -> deploy Cloud Run.
+# Run: gcloud builds submit --config ws/cloudbuild.yaml --substitutions=_REGION=us-central1,_REPO=fl-ws ws/
+substitutions:
+  _REGION: us-central1
+  _REPO: fl-ws
+steps:
+  - id: build
+    name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -t
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/fl-ws:$SHORT_SHA
+      - -f
+      - ws/Dockerfile
+      - ws/
+  - id: push
+    name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/fl-ws:$SHORT_SHA
+  - id: deploy
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - fl-ws
+      - --image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/fl-ws:$SHORT_SHA
+      - --region=${_REGION}
+      - --platform=managed
+      - --allow-unauthenticated
+      - --timeout=3600s
+      - --session-affinity
+      - --set-env-vars=QDRANT_URL=${_QDRANT_URL},QDRANT_KEY=${_QDRANT_KEY}
+images:
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/fl-ws:$SHORT_SHA
+options:
+  logging: CLOUD_LOGGING_ONLY

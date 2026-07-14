@@ -1,0 +1,13 @@
+
+> fl@0.0.1 dev /home/ed/i/fl
+> vite dev
+
+8:40:59 PM [vite] (client) Forced re-optimization of dependencies
+
+  VITE v8.1.4  ready in 2679 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+Using secrets defined in .dev.vars
+Using secrets defined in .dev.vars
