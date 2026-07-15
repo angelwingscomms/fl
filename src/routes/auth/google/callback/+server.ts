@@ -1,5 +1,6 @@
 import { google_client } from '$lib/server/oauth';
 import { encode_session } from '$lib/server/session';
+import { save_user } from '$lib/server/qdrant';
 import type { RequestEvent } from '@sveltejs/kit';
 
 export async function GET(event: RequestEvent): Promise<Response> {
@@ -28,6 +29,7 @@ export async function GET(event: RequestEvent): Promise<Response> {
 		picture?: string;
 		email?: string;
 	};
+	await save_user(event, guser.sub, guser.name, guser.picture, guser.email);
 	const session = await encode_session({
 		id: guser.sub,
 		name: guser.name,

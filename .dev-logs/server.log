@@ -386,3 +386,39 @@ Error: Cannot use relative URL ([object Fetcher]/collections/fl) with global fet
 489 |  @layer base {
 490 |    *,	*::before,	*::after {
 2:49:47 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+486 |    }
+487 |  }
+488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+489 |  @layer base {
+490 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+486 |    }
+487 |  }
+488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+489 |  @layer base {
+490 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+486 |    }
+487 |  }
+488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+489 |  @layer base {
+490 |    *,	*::before,	*::after {
+3:13:06 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+3:13:06 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+3:13:06 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
+3:13:06 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/5.js
+3:13:06 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
+3:13:06 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/9.js
+3:13:06 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
+3:13:06 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+3:13:06 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
+3:13:06 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+3:13:06 PM [vite] (client) page reload .svelte-kit/generated/root.js
+3:13:06 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
+3:13:07 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
+3:13:33 PM [vite] (client) hmr update /src/routes/layout.css
+3:13:33 PM [vite] (ssr) page reload src/lib/server/qdrant.ts

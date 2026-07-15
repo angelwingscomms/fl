@@ -17,6 +17,9 @@
 		"test:e2e": "playwright install && playwright test",
 		"gen": "wrangler types"
 	},
+	"dependencies": {
+		"arctic": "^3.7.0"
+	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
 		"@playwright/test": "^1.60.0",

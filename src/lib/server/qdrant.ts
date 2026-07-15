@@ -81,3 +81,29 @@ export const ZERO = () => new Array(DIM).fill(0);
 export const is_profile = (p: Point) => p.payload.k === 'profile';
 export const is_job = (p: Point) => p.payload.k === 'job';
 export const is_msg = (p: Point) => p.payload.k === 'msg';
+
+export type SecretVal = string | { get?: () => Promise<string> } | undefined;
+
+export async function get_secret(v: SecretVal): Promise<string> {
+	if (v && typeof (v as { get?: unknown }).get === 'function')
+		return await (v as { get: () => Promise<string> }).get();
+	return (v as string) ?? '';
+}
+
+export async function save_user(
+	e: RequestEvent,
+	id: string,
+	name: string,
+	picture?: string,
+	email?: string
+): Promise<void> {
+	const env = env_of(e);
+	const u = { s: 'u', n: name, p: picture, m: email, d: Date.now(), o: 'google' };
+	try {
+		await qd('PUT', `/collections/${COLL}/points`, {
+			points: [{ id: `u_${id}`, vector: new Array(DIM).fill(0), payload: u }]
+		}, env);
+	} catch {
+		// best effort
+	}
+}
