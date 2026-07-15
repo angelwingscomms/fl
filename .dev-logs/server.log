@@ -210,3 +210,29 @@ https://svelte.dev/e/state_referenced_locally
     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 476 |  @layer base {
 477 |    *,	*::before,	*::after {
+2:29:09 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:15:35 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
+https://svelte.dev/e/state_referenced_locally
+2:29:09 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:16:36 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
+https://svelte.dev/e/state_referenced_locally
+2:29:09 PM [vite] (client) hmr update /src/routes/profile/+page.svelte, /src/routes/layout.css
+2:29:09 PM [vite] (ssr) page reload src/routes/profile/+page.svelte
+2:29:09 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:15:35 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
+https://svelte.dev/e/state_referenced_locally
+2:29:09 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:16:36 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
+https://svelte.dev/e/state_referenced_locally
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+473 |    }
+474 |  }
+475 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+476 |  @layer base {
+477 |    *,	*::before,	*::after {
+2:29:14 PM [vite] (client) hmr update /src/routes/layout.css
+2:29:14 PM [vite] (ssr) page reload src/routes/layout.css
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+473 |    }
+474 |  }
+475 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+476 |  @layer base {
+477 |    *,	*::before,	*::after {

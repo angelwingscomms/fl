@@ -224,6 +224,18 @@
 	.add-row:hover {
 		color: var(--color-accent);
 	}
+
+	.profile-card:hover {
+		transform: none;
+		box-shadow: var(--shadow-soft);
+		border-color: var(--color-border);
+	}
+
+	.profile-card .icon-btn:hover,
+	.profile-card .add-row:hover {
+		color: var(--color-text-muted);
+		border-color: var(--color-border);
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {

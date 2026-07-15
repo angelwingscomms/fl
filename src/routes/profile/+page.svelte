@@ -23,7 +23,7 @@
 
 {#if form?.error}<p class="mb-4 text-[var(--color-accent)]">{form.error}</p>{/if}
 
-<form method="POST" class="card-fl space-y-7 p-6 max-w-xl">
+<form method="POST" class="card-fl profile-card space-y-7 p-6 max-w-xl">
 	<label class="block space-y-1.5">
 		<span class="eyebrow">Handle</span>
 		<input name="handle" value={p.handle} class="field-fl" required />
