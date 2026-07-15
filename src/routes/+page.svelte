@@ -2,25 +2,34 @@
 	let { data } = $props();
 </script>
 
-<h1 class="text-2xl font-bold mb-2">FL</h1>
-<p class="text-zinc-400 mb-4">
-	Freelance marketplace. Build a profile, post a job, get matched with the best freelancers.
-</p>
+<section class="py-10">
+	<p class="eyebrow mb-3">freelance, but sweet</p>
+	<h1 class="text-display gradient-text mb-4">Find the right<br />freelancer.</h1>
+	<p class="text-[var(--color-text-muted)] max-w-xl mb-8">
+		Freelance marketplace. Build a profile, post a job, get matched with the best freelancers.
+	</p>
 
-<ul class="space-y-2">
-	<li>
-		<a class="underline" href="/profile">Create / edit your profile</a> — your about text, links, images.
-	</li>
-	<li>
-		<a class="underline" href="/jobs/new">Post a job</a> — we'll match you with the top 9 freelancers.
-	</li>
-</ul>
+	<div class="grid gap-4 sm:grid-cols-2 max-w-2xl">
+		<a class="card-fl p-5 block" href="/profile">
+			<h3 class="text-lg font-semibold mb-1">Create your profile</h3>
+			<p class="text-sm text-[var(--color-text-muted)]">Your about text, links, images.</p>
+		</a>
+		<a class="card-fl p-5 block" href="/jobs/new">
+			<h3 class="text-lg font-semibold mb-1">Post a job</h3>
+			<p class="text-sm text-[var(--color-text-muted)]">
+				We'll match you with the top 9 freelancers.
+			</p>
+		</a>
+	</div>
+</section>
 
 {#if data.profiles?.length}
-	<h2 class="text-lg font-semibold mt-6 mb-2">Freelancers</h2>
-	<ul class="space-y-1">
-		{#each data.profiles as p (p.handle)}
-			<li><a class="underline" href="/u/{p.handle}">{p.handle}</a></li>
-		{/each}
-	</ul>
+	<section class="mt-12">
+		<h2 class="text-2xl font-bold mb-4">Freelancers</h2>
+		<div class="flex flex-wrap gap-2">
+			{#each data.profiles as p (p.handle)}
+				<a class="tag-fl hover:!text-[var(--color-accent)]" href="/u/{p.handle}">{p.handle}</a>
+			{/each}
+		</div>
+	</section>
 {/if}

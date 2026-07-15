@@ -22,7 +22,10 @@
 					created_at: x.created_at ?? 0
 				}));
 			else if (m.type === 'msg')
-				messages = [...messages, { from: m.from, body: m.body, created_at: m.created_at ?? Date.now() }];
+				messages = [
+					...messages,
+					{ from: m.from, body: m.body, created_at: m.created_at ?? Date.now() }
+				];
 		};
 		return () => ws?.close();
 	});
@@ -35,22 +38,30 @@
 	}
 </script>
 
-<h1 class="text-xl font-bold mb-1">Message {data.freelancer}</h1>
-<p class="text-zinc-400 mb-1">
-	re: <a class="underline" href="/jobs/{data.job.id}">{data.job.title}</a>
+<h1 class="text-3xl font-bold gradient-text mb-1">Message {data.freelancer}</h1>
+<p class="text-[var(--color-text-muted)] mb-1">
+	re: <a href="/jobs/{data.job.id}">{data.job.title}</a>
 </p>
-<p class="text-xs text-zinc-500 mb-3">{status}</p>
+<p class="text-xs text-[var(--color-text-muted)] mb-4">{status}</p>
 
-<div class="space-y-2 mb-4">
+<div class="space-y-3 mb-6">
 	{#each messages as m (m.created_at ?? crypto.randomUUID())}
-		<div class="border border-zinc-800 rounded p-2 text-sm">
-			<span class="text-xs text-zinc-500">{m.from === data.freelancer ? data.freelancer : 'you'}</span>
-			<p>{m.body}</p>
+		<div class="card-fl p-3 text-sm">
+			<span class="text-xs text-[var(--color-text-muted)]"
+				>{m.from === data.freelancer ? data.freelancer : 'you'}</span
+			>
+			<p class="mt-1">{m.body}</p>
 		</div>
 	{/each}
 </div>
 
-<form class="space-y-2" onsubmit={(e) => { e.preventDefault(); send(); }}>
-	<textarea bind:value={draft} rows="3" class="w-full bg-zinc-900 border border-zinc-700 rounded p-2" required></textarea>
-	<button class="bg-zinc-100 text-zinc-900 rounded px-4 py-2 font-semibold" disabled={!data.wsUrl}>Send</button>
+<form
+	class="space-y-3"
+	onsubmit={(e) => {
+		e.preventDefault();
+		send();
+	}}
+>
+	<textarea bind:value={draft} rows="3" class="field-fl" required></textarea>
+	<button class="btn-fl" disabled={!data.wsUrl}>Send</button>
 </form>

@@ -2,27 +2,33 @@
 	let { data } = $props();
 </script>
 
-<h1 class="text-2xl font-bold mb-1">{data.handle}</h1>
-{#if data.is_owner}<a class="text-sm underline" href="/profile">edit</a>{/if}
+<div class="flex items-center gap-3 mb-1">
+	<h1 class="text-4xl font-bold gradient-text">{data.handle}</h1>
+	{#if data.is_owner}<a class="tag-fl hover:!text-[var(--color-accent)]" href="/profile">edit</a
+		>{/if}
+</div>
 
 {#if data.i.length}
-	<div class="grid grid-cols-3 gap-2 my-3">
+	<div class="grid grid-cols-3 gap-3 my-6">
 		{#each data.i as url (url)}
-			<img src={url} alt="" class="w-full h-32 object-cover rounded border border-zinc-800" />
+			<img
+				src={url}
+				alt=""
+				class="aspect-square w-full object-cover rounded-[var(--radius-xl)] border border-[var(--color-border)]"
+			/>
 		{/each}
 	</div>
 {/if}
 
 {#if data.t}
-	<pre
-		class="whitespace-pre-wrap bg-zinc-900 border border-zinc-800 rounded p-3 text-sm">{data.t}</pre>
+	<pre class="card-fl whitespace-pre-wrap p-5 text-sm font-sans leading-relaxed">{data.t}</pre>
 {/if}
 
 {#if data.l.length}
-	<h2 class="text-sm text-zinc-400 mt-3 mb-1">Links</h2>
-	<ul class="list-disc list-inside">
+	<h2 class="eyebrow mt-8 mb-3">Links</h2>
+	<ul class="flex flex-wrap gap-2">
 		{#each data.l as link (link)}
-			<li><a class="underline break-all" href={link}>{link}</a></li>
+			<li><a class="tag-fl hover:!text-[var(--color-accent)] break-all" href={link}>{link}</a></li>
 		{/each}
 	</ul>
 {/if}

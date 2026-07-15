@@ -2,12 +2,13 @@
 > fl@0.0.1 dev /home/ed/i/fl
 > vite dev
 
-8:40:59 PM [vite] (client) Forced re-optimization of dependencies
+Port 5173 is in use, trying another one...
 
-  VITE v8.1.4  ready in 2679 ms
+  VITE v8.1.4  ready in 2111 ms
 
-  ➜  Local:   http://localhost:5173/
+  ➜  Local:   http://localhost:5174/
+  ➜  Network: use --host to 2:10:19 PM [vite] vite.config.ts changed, restarting server...
+2:10:19 PM [vite] server restarted.
+
+  ➜  Local:   http://localhost:2727/
   ➜  Network: use --host to expose
-  ➜  press h + enter to show help
-Using secrets defined in .dev.vars
-Using secrets defined in .dev.vars
