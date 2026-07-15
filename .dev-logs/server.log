@@ -2,423 +2,212 @@
 > fl@0.0.1 dev /home/ed/i/fl
 > vite dev
 
-Port 5173 is in use, trying another one...
+8:44:47 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
+8:44:47 PM [vite] (ssr) Re-optimizing dependencies because lockfile has changed
 
-  VITE v8.1.4  ready in 2111 ms
-
-  ➜  Local:   http://localhost:5174/
-  ➜  Network: use --host to 2:10:19 PM [vite] vite.config.ts changed, restarting server...
-2:10:19 PM [vite] server restarted.
+  VITE v8.1.4  ready in 3483 ms
 
   ➜  Local:   http://localhost:2727/
   ➜  Network: use --host to expose
+  ➜  press h + enter to show help
 Using secrets defined in .dev.vars
 Using secrets defined in .dev.vars
 *** Fatal uncaught kj::Exception: workerd/util/sqlite.c++:844: failed: SENTRY_DO SQLite failed; NOSENTRY database is locked: SQLITE_BUSY (extended: SQLITE_BUSY_RECOVERY)
 stack: /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@33af68b /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2010925 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@206e2bc /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@206dc76 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@202b09c /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@202aaf2 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@1fe0a32 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@20680bf /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@206b415 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@1fb1339 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@5432855 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@5432d78 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@543082e /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@543062e /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@1f98d17 /usr/lib/libc.so.6@2abfb /usr/lib/libc.so.6@2acb4 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@1f98024
 [vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+471 |    }
+472 |  }
+473 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
+474 |  @layer base {
+475 |    *,	*::before,	*::after {
 [vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+471 |    }
+472 |  }
+473 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
-2:20:58 PM [vite] (client) hmr update /src/routes/layout.css
-2:20:58 PM [vite] (ssr) page reload src/routes/layout.css
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
-2:21:11 PM [vite] (client) hmr update /src/routes/layout.css
-2:21:11 PM [vite] (ssr) page reload src/routes/layout.css
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
-2:21:12 PM [vite] (client) hmr update /src/routes/layout.css
-2:21:12 PM [vite] (ssr) page reload src/routes/layout.css
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
-2:21:19 PM [vite] (client) hmr update /src/routes/+page.svelte, /src/routes/layout.css
-2:21:19 PM [vite] (ssr) page reload src/routes/+page.svelte
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
-2:21:20 PM [vite] (client) hmr update /src/routes/+layout.svelte, /src/routes/layout.css
-2:21:20 PM [vite] (ssr) page reload src/routes/+layout.svelte
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
-2:21:22 PM [vite] (client) hmr update /src/routes/jobs/new/+page.svelte, /src/routes/layout.css
-2:21:22 PM [vite] (ssr) page reload src/routes/jobs/new/+page.svelte
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
-2:21:23 PM [vite] (client) hmr update /src/routes/profile/+page.svelte, /src/routes/layout.css
-2:21:23 PM [vite] (ssr) page reload src/routes/profile/+page.svelte
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
-2:27:26 PM [vite] (client) hmr update /src/routes/layout.css
-2:27:26 PM [vite] (ssr) page reload src/routes/profile/+page.server.ts
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
-2:27:40 PM [vite] (client) hmr update /src/routes/layout.css
-2:27:40 PM [vite] (ssr) page reload src/routes/layout.css
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-456 |    }
-457 |  }
-458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-459 |  @layer base {
-460 |    *,	*::before,	*::after {
-2:27:52 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:13:35 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
-https://svelte.dev/e/state_referenced_locally
-2:27:52 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:14:36 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
-https://svelte.dev/e/state_referenced_locally
-2:27:52 PM [vite] (client) hmr update /src/routes/profile/+page.svelte, /src/routes/layout.css
-2:27:52 PM [vite] (ssr) page reload src/routes/profile/+page.svelte
-2:27:52 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:13:35 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
-https://svelte.dev/e/state_referenced_locally
-2:27:52 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:14:36 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
-https://svelte.dev/e/state_referenced_locally
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-473 |    }
-474 |  }
-475 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-476 |  @layer base {
-477 |    *,	*::before,	*::after {
-2:27:57 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:15:35 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
-https://svelte.dev/e/state_referenced_locally
-2:27:57 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:16:36 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
-https://svelte.dev/e/state_referenced_locally
-2:27:57 PM [vite] (client) hmr update /src/routes/profile/+page.svelte, /src/routes/layout.css
-2:27:57 PM [vite] (ssr) page reload src/routes/profile/+page.svelte
-2:27:58 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:15:35 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
-https://svelte.dev/e/state_referenced_locally
-2:27:58 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:16:36 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
-https://svelte.dev/e/state_referenced_locally
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-473 |    }
-474 |  }
-475 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-476 |  @layer base {
-477 |    *,	*::before,	*::after {
-2:27:58 PM [vite] (client) hmr update /src/routes/layout.css
-2:27:58 PM [vite] (ssr) page reload src/routes/profile/+page.server.ts
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-473 |    }
-474 |  }
-475 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-476 |  @layer base {
-477 |    *,	*::before,	*::after {
-2:29:09 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:15:35 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
-https://svelte.dev/e/state_referenced_locally
-2:29:09 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:16:36 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
-https://svelte.dev/e/state_referenced_locally
-2:29:09 PM [vite] (client) hmr update /src/routes/profile/+page.svelte, /src/routes/layout.css
-2:29:09 PM [vite] (ssr) page reload src/routes/profile/+page.svelte
-2:29:09 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:15:35 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
-https://svelte.dev/e/state_referenced_locally
-2:29:09 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:16:36 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
-https://svelte.dev/e/state_referenced_locally
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-473 |    }
-474 |  }
-475 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-476 |  @layer base {
-477 |    *,	*::before,	*::after {
-2:29:14 PM [vite] (client) hmr update /src/routes/layout.css
-2:29:14 PM [vite] (ssr) page reload src/routes/layout.css
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-473 |    }
-474 |  }
-475 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-476 |  @layer base {
-477 |    *,	*::before,	*::after {
-2:35:52 PM [vite] (client) hmr update /src/routes/layout.css
-2:35:52 PM [vite] (ssr) page reload src/routes/layout.css
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-463 |    }
-464 |  }
-465 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-466 |  @layer base {
-467 |    *,	*::before,	*::after {
-2:36:23 PM [vite] (client) hmr update /src/routes/+layout.svelte, /src/routes/layout.css
-2:36:23 PM [vite] (ssr) page reload src/routes/+layout.svelte
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-478 |    }
-479 |  }
-480 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-481 |  @layer base {
-482 |    *,	*::before,	*::after {
-2:36:48 PM [vite] (client) hmr update /src/routes/layout.css
-2:36:48 PM [vite] (ssr) page reload src/routes/layout.css
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
+474 |  @layer base {
+475 |    *,	*::before,	*::after {
 
-[1;31m[500] POST /profile[0m
-Error: Cannot use relative URL ([object Fetcher]/collections/fl) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
-    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
-    at qd (src/lib/server/qdrant.ts:18:18)
-    at ensure_coll (src/lib/server/qdrant.ts:32:9)
-    at default (src/routes/profile/+page.server.ts:37:9)
+[1;31m[404] GET /favicon.ico[0m
 [vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+471 |    }
+472 |  }
+473 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
-2:48:13 PM [vite] (client) hmr update /src/routes/layout.css
-2:48:13 PM [vite] (ssr) page reload src/lib/server/session.ts
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
-2:48:55 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
-2:49:23 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/5.js
-2:49:23 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
-2:49:23 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/9.js
-2:49:23 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
-2:49:31 PM [vite] (client) hmr update /src/routes/+layout.svelte, /src/routes/layout.css
-2:49:31 PM [vite] (ssr) page reload src/routes/+layout.svelte
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
-2:49:44 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
-2:49:47 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-486 |    }
-487 |  }
-488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-489 |  @layer base {
-490 |    *,	*::before,	*::after {
-3:13:06 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
-3:13:06 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
-3:13:06 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
-3:13:06 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/5.js
-3:13:06 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
-3:13:06 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/9.js
-3:13:06 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
-3:13:06 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
-3:13:06 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
-3:13:06 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
-3:13:06 PM [vite] (client) page reload .svelte-kit/generated/root.js
-3:13:06 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
-3:13:07 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
-3:13:33 PM [vite] (client) hmr update /src/routes/layout.css
-3:13:33 PM [vite] (ssr) page reload src/lib/server/qdrant.ts
+474 |  @layer base {
+475 |    *,	*::before,	*::after {
+8:45:04 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:15:35 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
+https://svelte.dev/e/state_referenced_locally
+8:45:04 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:16:36 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
+https://svelte.dev/e/state_referenced_locally
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /auth/google[0m
+Error: Secret "GOOGLE_ID" not found
+    at get_secret (src/lib/server/oauth.ts:8:54)
+    at google_client (src/lib/server/oauth.ts:13:19)
+    at GET (src/routes/auth/google/+server.ts:12:30)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /jobs[0m
+TypeError: (0 , __vite_ssr_import_0__.require_uid) is not a function
+    at load (src/routes/jobs/+page.server.ts:6:14)
+
+[1;31m[500] GET /jobs[0m
+TypeError: (0 , __vite_ssr_import_0__.require_uid) is not a function
+    at load (src/routes/jobs/+page.server.ts:6:14)
+
+[1;31m[500] GET /jobs[0m
+TypeError: (0 , __vite_ssr_import_0__.require_uid) is not a function
+    at load (src/routes/jobs/+page.server.ts:6:14)
+
+[1;31m[500] GET /jobs[0m
+TypeError: (0 , __vite_ssr_import_0__.require_uid) is not a function
+    at load (src/routes/jobs/+page.server.ts:6:14)
+
+[1;31m[500] GET /jobs[0m
+TypeError: (0 , __vite_ssr_import_0__.require_uid) is not a function
+    at load (src/routes/jobs/+page.server.ts:6:14)
+
+[1;31m[500] GET /jobs[0m
+TypeError: (0 , __vite_ssr_import_0__.require_uid) is not a function
+    at load (src/routes/jobs/+page.server.ts:6:14)
+
+[1;31m[500] GET /jobs[0m
+TypeError: (0 , __vite_ssr_import_0__.require_uid) is not a function
+    at load (src/routes/jobs/+page.server.ts:6:14)
+
+[1;31m[500] GET /jobs[0m
+TypeError: (0 , __vite_ssr_import_0__.require_uid) is not a function
+    at load (src/routes/jobs/+page.server.ts:6:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
+
+[1;31m[500] GET /profile[0m
+TypeError: (0 , __vite_ssr_import_1__.get_uid) is not a function
+    at load (src/routes/profile/+page.server.ts:8:14)
