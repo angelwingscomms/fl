@@ -4,7 +4,7 @@
 
 <section class="py-10">
 	<p class="eyebrow mb-3">freelance, but sweet</p>
-	<h1 class="text-display gradient-text mb-4">Find the right<br />freelancer.</h1>
+	<h1 class="text-display mb-4">Find the right<br />freelancer.</h1>
 	<p class="text-[var(--color-text-muted)] max-w-xl mb-8">
 		Freelance marketplace. Build a profile, post a job, get matched with the best freelancers.
 	</p>

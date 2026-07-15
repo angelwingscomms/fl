@@ -4,7 +4,7 @@
 </script>
 
 <h1 class="text-3xl font-bold mb-6">
-	<span class="gradient-text">{p.handle ? 'Edit' : 'Create'} your profile</span>
+	<span>{p.handle ? 'Edit' : 'Create'} your profile</span>
 </h1>
 
 {#if form?.error}<p class="mb-4 text-[var(--color-accent)]">{form.error}</p>{/if}

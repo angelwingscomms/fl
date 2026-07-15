@@ -49,10 +49,7 @@
 
 	body {
 		margin: 0;
-		background:
-			radial-gradient(1100px 600px at 12% -10%, rgba(255, 158, 207, 0.12), transparent 60%),
-			radial-gradient(900px 500px at 100% 0%, rgba(201, 167, 255, 0.12), transparent 55%),
-			var(--color-canvas);
+		background: var(--color-canvas);
 		color: var(--color-text);
 		font-family: var(--font-sans);
 		font-size: 1.0625rem;
@@ -105,18 +102,6 @@
 		padding-inline: 1.25rem;
 	}
 
-	.gradient-text {
-		background: linear-gradient(
-			120deg,
-			var(--color-accent),
-			var(--color-accent-2) 45%,
-			var(--color-accent-3)
-		);
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
-	}
-
 	.eyebrow {
 		text-transform: uppercase;
 		letter-spacing: 0.22em;
@@ -152,12 +137,7 @@
 		border-radius: var(--radius-full);
 		font-weight: 600;
 		border: 1px solid transparent;
-		background: linear-gradient(
-			120deg,
-			var(--color-accent),
-			var(--color-accent-2) 55%,
-			var(--color-accent-3)
-		);
+		background: var(--color-accent);
 		color: #1a0f18;
 		box-shadow: 0 8px 28px -10px var(--color-glow);
 		transition:

@@ -3,7 +3,7 @@
 </script>
 
 <div class="flex items-center gap-3 mb-1">
-	<h1 class="text-4xl font-bold gradient-text">{data.handle}</h1>
+	<h1 class="text-4xl font-bold">{data.handle}</h1>
 	{#if data.is_owner}<a class="tag-fl hover:!text-[var(--color-accent)]" href="/profile">edit</a
 		>{/if}
 </div>

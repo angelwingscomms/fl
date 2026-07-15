@@ -38,7 +38,7 @@
 	}
 </script>
 
-<h1 class="text-3xl font-bold gradient-text mb-1">Message {data.freelancer}</h1>
+<h1 class="text-3xl font-bold mb-1">Message {data.freelancer}</h1>
 <p class="text-[var(--color-text-muted)] mb-1">
 	re: <a href="/jobs/{data.job.id}">{data.job.title}</a>
 </p>

@@ -2,7 +2,7 @@
 	let { data } = $props();
 </script>
 
-<h1 class="text-3xl font-bold mb-6"><span class="gradient-text">My jobs</span></h1>
+<h1 class="text-3xl font-bold mb-6">My jobs</h1>
 {#if data.jobs.length}
 	<ul class="space-y-3">
 		{#each data.jobs as j (j.id)}

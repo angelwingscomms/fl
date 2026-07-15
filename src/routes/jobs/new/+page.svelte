@@ -2,7 +2,7 @@
 	let { form } = $props();
 </script>
 
-<h1 class="text-3xl font-bold mb-6"><span class="gradient-text">Post a job</span></h1>
+<h1 class="text-3xl font-bold mb-6">Post a job</h1>
 {#if form?.error}<p class="mb-4 text-[var(--color-accent)]">{form.error}</p>{/if}
 
 <form method="POST" class="space-y-5 max-w-xl">

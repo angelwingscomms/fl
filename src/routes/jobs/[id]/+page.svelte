@@ -2,7 +2,7 @@
 	let { data } = $props();
 </script>
 
-<h1 class="text-4xl font-bold gradient-text mb-3">{data.job.title}</h1>
+<h1 class="text-4xl font-bold mb-3">{data.job.title}</h1>
 <pre class="card-fl whitespace-pre-wrap p-5 text-sm font-sans leading-relaxed mb-8">{data.job
 		.description}</pre>
 

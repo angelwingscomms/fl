@@ -9,7 +9,7 @@
 <nav
 	class="sticky top-0 z-50 flex items-center gap-5 px-5 py-3 text-sm backdrop-blur-xl border-b border-[var(--color-border)] bg-[color-mix(in_oklab,var(--color-canvas)_72%,transparent)]"
 >
-	<a class="font-display text-lg font-bold gradient-text" href="/">FL</a>
+	<a class="font-display text-lg font-bold" href="/">FL</a>
 	<div class="ml-auto flex items-center gap-5">
 		<a class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]" href="/profile"
 			>Profile</a

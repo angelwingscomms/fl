@@ -12,3 +12,140 @@ Port 5173 is in use, trying another one...
 
   ➜  Local:   http://localhost:2727/
   ➜  Network: use --host to expose
+Using secrets defined in .dev.vars
+Using secrets defined in .dev.vars
+*** Fatal uncaught kj::Exception: workerd/util/sqlite.c++:844: failed: SENTRY_DO SQLite failed; NOSENTRY database is locked: SQLITE_BUSY (extended: SQLITE_BUSY_RECOVERY)
+stack: /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@33af68b /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2010925 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@206e2bc /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@206dc76 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@202b09c /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@202aaf2 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@1fe0a32 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@20680bf /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@206b415 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@1fb1339 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@5432855 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@5432d78 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@543082e /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@543062e /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@1f98d17 /usr/lib/libc.so.6@2abfb /usr/lib/libc.so.6@2acb4 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@1f98024
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
+2:20:58 PM [vite] (client) hmr update /src/routes/layout.css
+2:20:58 PM [vite] (ssr) page reload src/routes/layout.css
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
+2:21:11 PM [vite] (client) hmr update /src/routes/layout.css
+2:21:11 PM [vite] (ssr) page reload src/routes/layout.css
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
+2:21:12 PM [vite] (client) hmr update /src/routes/layout.css
+2:21:12 PM [vite] (ssr) page reload src/routes/layout.css
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
+2:21:19 PM [vite] (client) hmr update /src/routes/+page.svelte, /src/routes/layout.css
+2:21:19 PM [vite] (ssr) page reload src/routes/+page.svelte
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
+2:21:20 PM [vite] (client) hmr update /src/routes/+layout.svelte, /src/routes/layout.css
+2:21:20 PM [vite] (ssr) page reload src/routes/+layout.svelte
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
+2:21:22 PM [vite] (client) hmr update /src/routes/jobs/new/+page.svelte, /src/routes/layout.css
+2:21:22 PM [vite] (ssr) page reload src/routes/jobs/new/+page.svelte
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
+2:21:23 PM [vite] (client) hmr update /src/routes/profile/+page.svelte, /src/routes/layout.css
+2:21:23 PM [vite] (ssr) page reload src/routes/profile/+page.svelte
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
