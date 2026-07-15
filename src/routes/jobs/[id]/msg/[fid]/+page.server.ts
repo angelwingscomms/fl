@@ -8,17 +8,18 @@ export const load: PageServerLoad = async (e) => {
 	const id = e.params.id;
 	const fid = e.params.fid;
 
-	const jobRes = await get([id], e).catch(() => null);
+	const jobRes = await get([id]).catch(() => null);
 	const job = jobRes?.[0]?.payload;
 	if (!job) throw error(404, 'job not found');
-	if (String(job.client_id ?? '') !== uid) throw error(403, 'only the client can message for this job');
+	if (String(job.client_id ?? '') !== uid)
+		throw error(403, 'only the client can message for this job');
 
-	const freelancer = (await get([fid], e).catch(() => []))[0]?.payload;
+	const freelancer = (await get([fid]).catch(() => []))[0]?.payload;
 	if (!freelancer) throw error(404, 'freelancer not found');
 
 	let thread: { from: string; body: string; created_at: number }[] = [];
 	try {
-		const res = await scroll(200, e);
+		const res = await scroll(200);
 		thread = res
 			.filter((p) => is_msg(p) && String(p.payload.job_id ?? '') === id)
 			.map((p) => ({
@@ -51,24 +52,21 @@ export const actions: Actions = {
 		const body = String(f.get('body') ?? '').trim();
 		if (!body) return { error: 'message required' };
 
-		await upsert(
-			[
-				{
-					id: crypto.randomUUID(),
-					vector: ZERO(),
-					payload: {
-						s: id,
-						k: 'msg',
-						job_id: id,
-						from_id: uid,
-						to_id: fid,
-						body,
-						created_at: Date.now()
-					}
+		await upsert([
+			{
+				id: crypto.randomUUID(),
+				vector: ZERO(),
+				payload: {
+					s: id,
+					k: 'msg',
+					job_id: id,
+					from_id: uid,
+					to_id: fid,
+					body,
+					created_at: Date.now()
 				}
-			],
-			e
-		);
+			}
+		]);
 		throw redirect(303, `/jobs/${id}/msg/${fid}`);
 	}
 };

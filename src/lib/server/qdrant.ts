@@ -1,6 +1,7 @@
 // small Qdrant REST client. collection 'fl', tenant field 's' on payload.
 // payload indexes are avoided: we filter client-side after scroll/query.
-import type { RequestEvent } from '@sveltejs/kit';
+// env is read from $env/dynamic/private (ver-style), no RequestEvent needed.
+import { env } from '$env/dynamic/private';
 
 const COLL = 'fl';
 const DIM = 4096;
@@ -9,15 +10,14 @@ export type QEnv = { QDRANT_URL: string; QDRANT_KEY: string };
 
 export type Point = { id: string; payload: Record<string, unknown>; vector?: number[] };
 
-function env_of(e: RequestEvent): QEnv {
-	const env = e.platform?.env ?? ({} as QEnv);
+function env_of(): QEnv {
 	return { QDRANT_URL: env.QDRANT_URL ?? '', QDRANT_KEY: env.QDRANT_KEY ?? '' };
 }
 
-async function qd(method: string, path: string, body: unknown, env: QEnv) {
-	const r = await fetch(`${env.QDRANT_URL}${path}`, {
+async function qd(method: string, path: string, body: unknown, e: QEnv) {
+	const r = await fetch(`${e.QDRANT_URL}${path}`, {
 		method,
-		headers: { 'api-key': env.QDRANT_KEY, 'Content-Type': 'application/json' },
+		headers: { 'api-key': e.QDRANT_KEY, 'Content-Type': 'application/json' },
 		body: body ? JSON.stringify(body) : undefined
 	});
 	if (!r.ok) throw new Error(`qdrant ${method} ${path} ${r.status} ${await r.text()}`);
@@ -25,11 +25,11 @@ async function qd(method: string, path: string, body: unknown, env: QEnv) {
 }
 
 let ensured = false;
-export async function ensure_coll(e: RequestEvent) {
+export async function ensure_coll() {
 	if (ensured) return;
-	const env = env_of(e);
+	const e = env_of();
 	try {
-		await qd('PUT', `/collections/${COLL}`, { vectors: { size: DIM, distance: 'Cosine' } }, env);
+		await qd('PUT', `/collections/${COLL}`, { vectors: { size: DIM, distance: 'Cosine' } }, e);
 	} catch (err) {
 		// collection may already exist — that's fine
 		if (!String(err).includes('already exists')) throw err;
@@ -37,42 +37,42 @@ export async function ensure_coll(e: RequestEvent) {
 	ensured = true;
 }
 
-export async function upsert(points: unknown[], e: RequestEvent) {
-	const env = env_of(e);
-	await qd('PUT', `/collections/${COLL}/points`, { points }, env);
+export async function upsert(points: unknown[]) {
+	const e = env_of();
+	await qd('PUT', `/collections/${COLL}/points`, { points }, e);
 }
 
-export async function get(ids: string[], e: RequestEvent, withVector = false): Promise<Point[]> {
-	const env = env_of(e);
+export async function get(ids: string[], withVector = false): Promise<Point[]> {
+	const e = env_of();
 	const j = await qd(
 		'POST',
 		`/collections/${COLL}/points/retrieve`,
 		{ ids, with_payload: true, with_vector: withVector },
-		env
+		e
 	);
 	return (j.result ?? []) as Point[];
 }
 
-export async function scroll(limit: number, e: RequestEvent): Promise<Point[]> {
-	const env = env_of(e);
+export async function scroll(limit: number): Promise<Point[]> {
+	const e = env_of();
 	const j = await qd(
 		'POST',
 		`/collections/${COLL}/points/scroll`,
 		{ limit, offset: undefined, with_payload: true },
-		env
+		e
 	);
 	return (j.result?.points ?? []) as Point[];
 }
 
 export type Scored = { id: string; score: number; payload: Record<string, unknown> };
 
-export async function search(vector: number[], limit: number, e: RequestEvent): Promise<Scored[]> {
-	const env = env_of(e);
+export async function search(vector: number[], limit: number): Promise<Scored[]> {
+	const e = env_of();
 	const j = await qd(
 		'POST',
 		`/collections/${COLL}/points/query`,
 		{ vector, limit, with_payload: true },
-		env
+		e
 	);
 	return (j.result?.points ?? []) as Scored[];
 }
@@ -90,19 +90,26 @@ export async function get_secret(v: SecretVal): Promise<string> {
 	return (v as string) ?? '';
 }
 
+export const C = COLL;
+
 export async function save_user(
-	e: RequestEvent,
 	id: string,
 	name: string,
 	picture?: string,
-	email?: string
+	email?: string,
+	provider: 'google' | 'local' = 'google'
 ): Promise<void> {
-	const env = env_of(e);
-	const u = { s: 'u', n: name, p: picture, m: email, d: Date.now(), o: 'google' };
+	const e = env_of();
+	const u = { s: 'u', n: name, p: picture, m: email, d: Date.now(), o: provider };
 	try {
-		await qd('PUT', `/collections/${COLL}/points`, {
-			points: [{ id: `u_${id}`, vector: new Array(DIM).fill(0), payload: u }]
-		}, env);
+		await qd(
+			'PUT',
+			`/collections/${COLL}/points`,
+			{
+				points: [{ id: `u_${id}`, vector: new Array(DIM).fill(0), payload: u }]
+			},
+			e
+		);
 	} catch {
 		// best effort
 	}

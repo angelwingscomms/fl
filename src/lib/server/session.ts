@@ -1,4 +1,5 @@
 import { env } from '$env/dynamic/private';
+import { redirect } from '@sveltejs/kit';
 
 const SECRET = env.SECRET;
 
@@ -50,4 +51,14 @@ export async function decode_session(
 	} catch {
 		return null;
 	}
+}
+
+export function get_uid(e: { locals: App.Locals }): string | null {
+	return e.locals.user?.id ?? null;
+}
+
+export function require_uid(e: { locals: App.Locals }): string {
+	const uid = get_uid(e);
+	if (!uid) throw redirect(303, '/login');
+	return uid;
 }

@@ -9,7 +9,7 @@ export const load: PageServerLoad = async (e) => {
 
 	let job: { payload: Record<string, unknown>; vector?: number[] } | undefined;
 	try {
-		const res = await get([id], e, true);
+		const res = await get([id], true);
 		job = res[0];
 	} catch {
 		throw error(500, 'failed to load job');
@@ -21,7 +21,7 @@ export const load: PageServerLoad = async (e) => {
 	// a fresh search is done on every page load
 	let matches: { handle: string; id: string; score: number; t: string }[] = [];
 	try {
-		const pts = await search(job.vector as number[], 50, e);
+		const pts = await search(job.vector as number[], 50);
 		matches = pts
 			.filter(is_profile)
 			.slice(0, 9)

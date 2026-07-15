@@ -29,7 +29,7 @@ export async function GET(event: RequestEvent): Promise<Response> {
 		picture?: string;
 		email?: string;
 	};
-	await save_user(event, guser.sub, guser.name, guser.picture, guser.email);
+	await save_user(guser.sub, guser.name, guser.picture, guser.email);
 	const session = await encode_session({
 		id: guser.sub,
 		name: guser.name,

@@ -2,6 +2,16 @@
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
 	let { children, data } = $props();
+
+	let theme = $state<'light' | 'dark'>('light');
+	if (typeof document !== 'undefined') {
+		theme = (document.documentElement.getAttribute('data-theme') as 'light' | 'dark') ?? 'light';
+	}
+	function toggle_theme() {
+		theme = theme === 'dark' ? 'light' : 'dark';
+		document.documentElement.setAttribute('data-theme', theme);
+		localStorage.setItem('theme', theme);
+	}
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
@@ -18,12 +28,15 @@
 		<a class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]" href="/jobs"
 			>My jobs</a
 		>
+		<button class="icon-btn" aria-label="Toggle theme" onclick={toggle_theme}>
+			{theme === 'dark' ? '☀' : '☾'}
+		</button>
 		{#if data.user}
 			<a class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]" href="/logout"
 				>Log out</a
 			>
 		{:else}
-			<a class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]" href="/auth/login"
+			<a class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]" href="/login"
 				>Sign in</a
 			>
 		{/if}

@@ -5,7 +5,7 @@ import type { PageServerLoad } from './$types';
 export const load: PageServerLoad = async (e) => {
 	const uid = require_uid(e);
 	try {
-		const res = await scroll(200, e);
+		const res = await scroll(200);
 		const jobs = res
 			.filter((p) => is_job(p) && String(p.payload.client_id ?? '') === uid)
 			.map((p) => ({ id: String(p.payload.id ?? ''), title: String(p.payload.title ?? '') }));

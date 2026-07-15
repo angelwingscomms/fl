@@ -1,12 +1,9 @@
-import {
-	generateState,
-	generateCodeVerifier,
-	google_client
-} from '$lib/server/oauth';
+import { generateState, generateCodeVerifier, google_client } from '$lib/server/oauth';
+import { env } from '$env/dynamic/private';
 import type { RequestEvent } from '@sveltejs/kit';
 
 export async function GET(event: RequestEvent): Promise<Response> {
-	const genv = event.platform!.env;
+	const genv = { GOOGLE_ID: env.GOOGLE_ID, GOOGLE_SECRET: env.GOOGLE_SECRET };
 	const state = generateState();
 	const verifier = generateCodeVerifier();
 	const redirect_uri = (await google_client(event.url.origin, genv))

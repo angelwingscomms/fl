@@ -191,6 +191,36 @@
 		border-color: var(--color-accent);
 	}
 
+	@media (prefers-color-scheme: dark) {
+		:root:not([data-theme='light']) {
+			--color-canvas: #161310;
+			--color-surface: #211d18;
+			--color-surface-raised: #2b2620;
+			--color-text: #f3ede4;
+			--color-text-muted: #a89e8e;
+			--color-accent: #e2966c;
+			--color-accent-hover: #efa880;
+			--color-border: #3a332b;
+			--color-badge-paid: #1f3a24;
+			--color-badge-paid-text: #7fd884;
+			--shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.25);
+		}
+	}
+
+	:root[data-theme='dark'] {
+		--color-canvas: #161310;
+		--color-surface: #211d18;
+		--color-surface-raised: #2b2620;
+		--color-text: #f3ede4;
+		--color-text-muted: #a89e8e;
+		--color-accent: #e2966c;
+		--color-accent-hover: #efa880;
+		--color-border: #3a332b;
+		--color-badge-paid: #1f3a24;
+		--color-badge-paid-text: #7fd884;
+		--shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.25);
+	}
+
 	.add-row {
 		display: inline-flex;
 		align-items: center;

@@ -5,4 +5,5 @@ export interface User {
 	m?: string;
 	d: number;
 	o?: 'google' | 'local';
+	h?: string;
 }
