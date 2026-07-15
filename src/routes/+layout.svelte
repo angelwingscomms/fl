@@ -7,7 +7,7 @@
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
 <nav
-	class="sticky top-0 z-50 flex items-center gap-5 px-5 py-3 text-sm backdrop-blur-xl border-b border-[var(--color-border)] bg-[color-mix(in_oklab,var(--color-canvas)_72%,transparent)]"
+	class="sticky top-0 z-50 flex items-center gap-5 px-5 py-3.5 text-sm bg-white/90 backdrop-blur border-b border-[var(--color-border)]"
 >
 	<a class="font-display text-lg font-bold" href="/">FL</a>
 	<div class="ml-auto flex items-center gap-5">

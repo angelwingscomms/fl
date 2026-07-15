@@ -1,37 +1,31 @@
 @import 'tailwindcss';
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
 
 @theme {
-	/* Color system — warm dark-first, sweet pastel accents */
-	--color-canvas: #14101a;
-	--color-surface: #1d1726;
-	--color-surface-raised: #271f33;
-	--color-text: #f4eef7;
-	--color-text-muted: #b3a7c4;
-	--color-accent: #ff9ecf;
-	--color-accent-2: #ffc59e;
-	--color-accent-3: #c9a7ff;
-	--color-border: #2e2540;
-	--color-glow: rgba(255, 158, 207, 0.35);
+	--color-canvas: #faf6f0;
+	--color-surface: #ffffff;
+	--color-surface-raised: #f5f0e8;
+	--color-text: #1e1b16;
+	--color-text-muted: #8c8578;
+	--color-accent: #d4845a;
+	--color-accent-hover: #c2734a;
+	--color-border: #ebe5db;
+	--color-badge-paid: #e8f5e9;
+	--color-badge-paid-text: #4caf50;
 
-	/* Typography */
-	--font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+	--font-display: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
 	--font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
 
-	--text-display: clamp(2.5rem, 6vw, 5rem);
-	--text-display--line-height: 1.02;
-	--text-display--letter-spacing: -0.02em;
-
-	/* Radii */
+	--radius-lg: 12px;
 	--radius-xl: 16px;
-	--radius-2xl: 24px;
 	--radius-full: 999px;
 
-	/* Shadows */
-	--shadow-soft: 0 10px 40px -12px rgba(0, 0, 0, 0.55);
-	--shadow-glow: 0 12px 50px -10px var(--color-glow);
+	--shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
 
-	/* Motion */
+	--text-display: clamp(2rem, 5vw, 3.5rem);
+	--text-display--line-height: 1.1;
+	--text-display--letter-spacing: -0.02em;
+
 	--ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -52,15 +46,15 @@
 		background: var(--color-canvas);
 		color: var(--color-text);
 		font-family: var(--font-sans);
-		font-size: 1.0625rem;
-		line-height: 1.7;
+		font-size: 1rem;
+		line-height: 1.6;
 		-webkit-font-smoothing: antialiased;
 		min-height: 100vh;
 	}
 
 	::selection {
 		background: var(--color-accent);
-		color: #1a0f18;
+		color: #fff;
 	}
 
 	h1,
@@ -68,8 +62,7 @@
 	h3 {
 		font-family: var(--font-display);
 		font-weight: 700;
-		letter-spacing: -0.02em;
-		line-height: 1.1;
+		line-height: 1.2;
 	}
 
 	a {
@@ -79,7 +72,7 @@
 	}
 
 	a:hover {
-		color: var(--color-accent-2);
+		color: var(--color-accent-hover);
 	}
 
 	:focus-visible {
@@ -92,40 +85,33 @@
 		font-family: var(--font-sans);
 		cursor: pointer;
 	}
+
+	input,
+	textarea {
+		font-family: var(--font-sans);
+	}
 }
 
 @layer components {
 	.container-fl {
 		width: 100%;
-		max-width: 72rem;
+		max-width: 40rem;
 		margin-inline: auto;
 		padding-inline: 1.25rem;
 	}
 
 	.eyebrow {
 		text-transform: uppercase;
-		letter-spacing: 0.22em;
-		font-size: 0.75rem;
+		letter-spacing: 0.18em;
+		font-size: 0.7rem;
 		font-weight: 600;
 		color: var(--color-text-muted);
 	}
 
 	.card-fl {
-		background: color-mix(in oklab, var(--color-surface-raised) 80%, transparent);
-		border: 1px solid var(--color-border);
+		background: var(--color-surface);
 		border-radius: var(--radius-xl);
-		box-shadow: var(--shadow-soft);
-		backdrop-filter: blur(12px);
-		transition:
-			transform 0.35s var(--ease-spring),
-			box-shadow 0.35s var(--ease-spring),
-			border-color 0.35s var(--ease-spring);
-	}
-
-	.card-fl:hover {
-		transform: translateY(-4px);
-		box-shadow: var(--shadow-glow);
-		border-color: color-mix(in oklab, var(--color-accent) 45%, var(--color-border));
+		box-shadow: var(--shadow-card);
 	}
 
 	.btn-fl {
@@ -133,58 +119,52 @@
 		align-items: center;
 		justify-content: center;
 		gap: 0.5rem;
-		padding: 0.7rem 1.4rem;
+		padding: 0.65rem 1.4rem;
 		border-radius: var(--radius-full);
 		font-weight: 600;
-		border: 1px solid transparent;
+		font-size: 0.9rem;
+		border: none;
 		background: var(--color-accent);
-		color: #1a0f18;
-		box-shadow: 0 8px 28px -10px var(--color-glow);
+		color: #fff;
 		transition:
-			transform 0.3s var(--ease-spring),
-			box-shadow 0.3s var(--ease-spring),
-			filter 0.3s var(--ease-spring);
+			background 0.2s var(--ease-spring),
+			transform 0.2s var(--ease-spring);
 	}
 
 	.btn-fl:hover {
-		transform: translateY(-2px);
-		filter: brightness(1.06);
-		box-shadow: 0 14px 36px -10px var(--color-glow);
+		background: var(--color-accent-hover);
 	}
 
 	.btn-fl:disabled {
 		opacity: 0.5;
 		cursor: not-allowed;
-		transform: none;
 	}
 
 	.field-fl {
 		width: 100%;
 		background: var(--color-surface);
 		border: 1px solid var(--color-border);
-		border-radius: var(--radius-xl);
-		padding: 0.7rem 0.9rem;
+		border-radius: var(--radius-lg);
+		padding: 0.65rem 0.85rem;
 		color: var(--color-text);
-		font-family: var(--font-sans);
-		transition:
-			border-color 0.25s var(--ease-spring),
-			box-shadow 0.25s var(--ease-spring);
+		font-size: 0.95rem;
+		transition: border-color 0.2s var(--ease-spring);
 	}
 
 	.field-fl:focus {
 		outline: none;
 		border-color: var(--color-accent);
-		box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-accent) 22%, transparent);
 	}
 
 	.tag-fl {
 		display: inline-flex;
 		align-items: center;
-		padding: 0.2rem 0.7rem;
+		padding: 0.25rem 0.75rem;
 		border-radius: var(--radius-full);
 		font-size: 0.75rem;
+		font-weight: 500;
 		color: var(--color-text-muted);
-		background: color-mix(in oklab, var(--color-surface-raised) 70%, transparent);
+		background: var(--color-surface-raised);
 		border: 1px solid var(--color-border);
 	}
 
@@ -193,13 +173,13 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		width: 2.4rem;
-		height: 2.4rem;
+		width: 2.2rem;
+		height: 2.2rem;
 		border-radius: var(--radius-full);
 		color: var(--color-text-muted);
 		background: transparent;
 		border: 1px solid var(--color-border);
-		font-size: 1.1rem;
+		font-size: 1rem;
 		line-height: 1;
 		transition:
 			color 0.2s var(--ease-spring),
@@ -227,8 +207,7 @@
 
 	.profile-card:hover {
 		transform: none;
-		box-shadow: var(--shadow-soft);
-		border-color: var(--color-border);
+		box-shadow: var(--shadow-card);
 	}
 
 	.profile-card .icon-btn:hover,

@@ -236,3 +236,30 @@ https://svelte.dev/e/state_referenced_locally
     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 476 |  @layer base {
 477 |    *,	*::before,	*::after {
+2:35:52 PM [vite] (client) hmr update /src/routes/layout.css
+2:35:52 PM [vite] (ssr) page reload src/routes/layout.css
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+463 |    }
+464 |  }
+465 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+466 |  @layer base {
+467 |    *,	*::before,	*::after {
+2:36:23 PM [vite] (client) hmr update /src/routes/+layout.svelte, /src/routes/layout.css
+2:36:23 PM [vite] (ssr) page reload src/routes/+layout.svelte
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+478 |    }
+479 |  }
+480 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+481 |  @layer base {
+482 |    *,	*::before,	*::after {
+2:36:48 PM [vite] (client) hmr update /src/routes/layout.css
+2:36:48 PM [vite] (ssr) page reload src/routes/layout.css
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+486 |    }
+487 |  }
+488 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+489 |  @layer base {
+490 |    *,	*::before,	*::after {
