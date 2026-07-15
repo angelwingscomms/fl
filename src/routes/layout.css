@@ -187,6 +187,43 @@
 		background: color-mix(in oklab, var(--color-surface-raised) 70%, transparent);
 		border: 1px solid var(--color-border);
 	}
+
+	.icon-btn {
+		flex: none;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.4rem;
+		height: 2.4rem;
+		border-radius: var(--radius-full);
+		color: var(--color-text-muted);
+		background: transparent;
+		border: 1px solid var(--color-border);
+		font-size: 1.1rem;
+		line-height: 1;
+		transition:
+			color 0.2s var(--ease-spring),
+			border-color 0.2s var(--ease-spring);
+	}
+
+	.icon-btn:hover {
+		color: var(--color-accent);
+		border-color: var(--color-accent);
+	}
+
+	.add-row {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		margin-top: 0.5rem;
+		font-size: 0.85rem;
+		color: var(--color-text-muted);
+		transition: color 0.2s var(--ease-spring);
+	}
+
+	.add-row:hover {
+		color: var(--color-accent);
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {

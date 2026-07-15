@@ -149,3 +149,64 @@ stack: /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.
     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 459 |  @layer base {
 460 |    *,	*::before,	*::after {
+2:27:26 PM [vite] (client) hmr update /src/routes/layout.css
+2:27:26 PM [vite] (ssr) page reload src/routes/profile/+page.server.ts
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
+2:27:40 PM [vite] (client) hmr update /src/routes/layout.css
+2:27:40 PM [vite] (ssr) page reload src/routes/layout.css
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+456 |    }
+457 |  }
+458 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+459 |  @layer base {
+460 |    *,	*::before,	*::after {
+2:27:52 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:13:35 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
+https://svelte.dev/e/state_referenced_locally
+2:27:52 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:14:36 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
+https://svelte.dev/e/state_referenced_locally
+2:27:52 PM [vite] (client) hmr update /src/routes/profile/+page.svelte, /src/routes/layout.css
+2:27:52 PM [vite] (ssr) page reload src/routes/profile/+page.svelte
+2:27:52 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:13:35 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
+https://svelte.dev/e/state_referenced_locally
+2:27:52 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:14:36 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
+https://svelte.dev/e/state_referenced_locally
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+473 |    }
+474 |  }
+475 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+476 |  @layer base {
+477 |    *,	*::before,	*::after {
+2:27:57 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:15:35 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
+https://svelte.dev/e/state_referenced_locally
+2:27:57 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:16:36 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
+https://svelte.dev/e/state_referenced_locally
+2:27:57 PM [vite] (client) hmr update /src/routes/profile/+page.svelte, /src/routes/layout.css
+2:27:57 PM [vite] (ssr) page reload src/routes/profile/+page.svelte
+2:27:58 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:15:35 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
+https://svelte.dev/e/state_referenced_locally
+2:27:58 PM [vite-plugin-svelte] src/routes/profile/+page.svelte:16:36 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
+https://svelte.dev/e/state_referenced_locally
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+473 |    }
+474 |  }
+475 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+476 |  @layer base {
+477 |    *,	*::before,	*::after {
+2:27:58 PM [vite] (client) hmr update /src/routes/layout.css
+2:27:58 PM [vite] (ssr) page reload src/routes/profile/+page.server.ts
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+473 |    }
+474 |  }
+475 |  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;60...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+476 |  @layer base {
+477 |    *,	*::before,	*::after {

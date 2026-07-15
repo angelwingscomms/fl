@@ -29,14 +29,8 @@ export const actions: Actions = {
 		const f = await e.request.formData();
 		const handle = String(f.get('handle') ?? '').trim();
 		const t = String(f.get('t') ?? '');
-		const l = String(f.get('l') ?? '')
-			.split('\n')
-			.map((s) => s.trim())
-			.filter(Boolean);
-		const i = String(f.get('i') ?? '')
-			.split('\n')
-			.map((s) => s.trim())
-			.filter(Boolean);
+		const l = (f.getAll('l') as string[]).map((s) => s.trim()).filter(Boolean);
+		const i = (f.getAll('i') as string[]).map((s) => s.trim()).filter(Boolean);
 		if (!handle)
 			return fail(400, { error: 'handle required', handle, t, l: l.join('\n'), i: i.join('\n') });
 
