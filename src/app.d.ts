@@ -13,10 +13,15 @@ declare global {
 			QDRANT_URL?: string;
 			QDRANT_KEY?: string;
 			OPENROUTER_KEY?: string;
+			GOOGLE_ID?: string;
+			GOOGLE_SECRET?: string;
+			SECRET?: string;
 		}
 
 		// interface Error {}
-		// interface Locals {}
+		interface Locals {
+			user: { id: string; name: string; picture?: string; email?: string } | null;
+		}
 		// interface PageData {}
 		// interface PageState {}
 	}

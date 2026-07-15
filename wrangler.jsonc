@@ -15,6 +15,9 @@
 	"secrets_store_secrets": [
 		{ "binding": "QDRANT_URL", "store_id": "45748cb1c67946df943075fa14cb8815", "secret_name": "QDRANT_URL" },
 		{ "binding": "QDRANT_KEY", "store_id": "45748cb1c67946df943075fa14cb8815", "secret_name": "QDRANT_KEY" },
-		{ "binding": "OPENROUTER_KEY", "store_id": "45748cb1c67946df943075fa14cb8815", "secret_name": "OPENROUTER_KEY" }
+		{ "binding": "OPENROUTER_KEY", "store_id": "45748cb1c67946df943075fa14cb8815", "secret_name": "OPENROUTER_KEY" },
+		{ "binding": "GOOGLE_ID", "store_id": "45748cb1c67946df943075fa14cb8815", "secret_name": "GOOGLE_ID" },
+		{ "binding": "GOOGLE_SECRET", "store_id": "45748cb1c67946df943075fa14cb8815", "secret_name": "GOOGLE_SECRET" },
+		{ "binding": "SECRET", "store_id": "45748cb1c67946df943075fa14cb8815", "secret_name": "SECRET" }
 	]
 }

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
-	let { children } = $props();
+	let { children, data } = $props();
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
@@ -18,6 +18,15 @@
 		<a class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]" href="/jobs"
 			>My jobs</a
 		>
+		{#if data.user}
+			<a class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]" href="/logout"
+				>Log out</a
+			>
+		{:else}
+			<a class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]" href="/auth/login"
+				>Sign in</a
+			>
+		{/if}
 	</div>
 </nav>
 
