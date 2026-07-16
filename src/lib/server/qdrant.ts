@@ -34,6 +34,13 @@ export async function ensure_coll() {
 		// collection may already exist — that's fine
 		if (!String(err).includes('already exists')) throw err;
 	}
+	// payload index on 'm' (email) so user lookup is server-side, not a full scroll+filter.
+	try {
+		await qd('PUT', `/collections/${COLL}/index`, { field_name: 'm', field_schema: 'keyword' }, e);
+	} catch (err) {
+		// index may already exist — that's fine
+		if (!String(err).includes('already exists')) throw err;
+	}
 	ensured = true;
 }
 
@@ -59,6 +66,18 @@ export async function scroll(limit: number): Promise<Point[]> {
 		'POST',
 		`/collections/${COLL}/points/scroll`,
 		{ limit, offset: undefined, with_payload: true },
+		e
+	);
+	return (j.result?.points ?? []) as Point[];
+}
+
+// server-side filtered scroll (uses the payload index). match: exact keyword equality.
+export async function find_by(field: string, value: string, limit = 1): Promise<Point[]> {
+	const e = env_of();
+	const j = await qd(
+		'POST',
+		`/collections/${COLL}/points/scroll`,
+		{ limit, with_payload: true, filter: { must: [{ key: field, match: { value } }] } },
 		e
 	);
 	return (j.result?.points ?? []) as Point[];

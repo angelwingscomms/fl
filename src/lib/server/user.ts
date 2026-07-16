@@ -1,5 +1,5 @@
 import type { User } from '$lib/types/user';
-import { get, scroll, upsert, ZERO } from './qdrant';
+import { ensure_coll, find_by, get, upsert, ZERO } from './qdrant';
 import { hash_pw, verify_pw } from './pw';
 
 const local = new Map<string, User>();
@@ -46,8 +46,9 @@ export async function get_user(id: string): Promise<User | null> {
 }
 
 export async function get_user_by_email(email: string): Promise<{ id: string; user: User } | null> {
+	const em = email.toLowerCase();
 	const look = (p: Record<string, unknown>, id: string): { id: string; user: User } | null => {
-		if (p.s === 'u' && String(p.m ?? '').toLowerCase() === email.toLowerCase()) {
+		if (p.s === 'u' && String(p.m ?? '').toLowerCase() === em) {
 			return {
 				id,
 				user: {
@@ -64,13 +65,15 @@ export async function get_user_by_email(email: string): Promise<{ id: string; us
 		return null;
 	};
 	try {
-		const res = await scroll(2000);
+		// server-side filtered lookup via the payload index on 'm'.
+		await ensure_coll();
+		const res = await find_by('m', em, 4);
 		for (const p of res) {
 			const r = look(p.payload as Record<string, unknown>, p.id);
 			if (r) return r;
 		}
 	} catch {
-		// ignore
+		// ignore — fall through to local map
 	}
 	for (const [id, u] of local) {
 		const r = look(u as unknown as Record<string, unknown>, id);
