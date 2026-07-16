@@ -1,5 +1,5 @@
 // Qdrant access for the WS backend. Same collection 'fl', tenant field 's'.
-// Messages stored as points with k='msg'. No payload indexes (filter client-side).
+// Messages stored as points with k='msg'; read via scroll + client-side filter.
 const COLL = 'fl';
 const DIM = 4096;
 const ZERO = () => new Array(DIM).fill(0);

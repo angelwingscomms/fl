@@ -1,5 +1,6 @@
 // small Qdrant REST client. collection 'fl', tenant field 's' on payload.
-// payload indexes are avoided: we filter client-side after scroll/query.
+// most lookups filter client-side after scroll/query; the 'm' (email) field
+// has a keyword payload index for server-side user lookup (see ensure_coll).
 // env is read from $env/dynamic/private (ver-style), no RequestEvent needed.
 import { env } from '$env/dynamic/private';
 

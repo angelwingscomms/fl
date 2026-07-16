@@ -131,3 +131,15 @@ https://svelte.dev/e/state_referenced_locally
     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 521 |  @layer base {
 522 |    *,	*::before,	*::after {
+8:41:36 AM [vite] (client) hmr update /src/routes/layout.css
+8:41:36 AM [vite] (ssr) page reload src/lib/server/qdrant.ts
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+518 |    }
+519 |  }
+520 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+521 |  @layer base {
+522 |    *,	*::before,	*::after {
+
+  ➜  Local:   http://localhost:2727/
+  ➜  Network: use --host to expose
