@@ -9,16 +9,21 @@
 	let live = $state(false);
 	let ws: WebSocket | undefined;
 	let retry: ReturnType<typeof setTimeout> | undefined;
+	let status = $state<'connecting' | 'live' | 'reconnecting'>('connecting');
 
 	function connect() {
 		if (typeof WebSocket === 'undefined') return;
+		status = retry ? 'reconnecting' : 'connecting';
 		const url = `/api/chat/ws?j=${encodeURIComponent(data.j.i)}&p=${encodeURIComponent(data.p)}`;
 		try {
 			ws = new WebSocket(url);
 		} catch {
 			return;
 		}
-		ws.onopen = () => (live = true);
+		ws.onopen = () => {
+			live = true;
+			status = 'live';
+		};
 		ws.onmessage = (e) => {
 			const m = JSON.parse(e.data) as { f: string; b: string; c: number };
 			if (!msgs.some((x) => x.c === m.c)) {
@@ -29,6 +34,7 @@
 		ws.onclose = () => {
 			live = false;
 			ws = undefined;
+			status = 'reconnecting';
 			retry = setTimeout(connect, 2000);
 		};
 		ws.onerror = () => ws?.close();
@@ -97,7 +103,18 @@
 			<span class="avatar avatar-48">{data.ph[0] ?? '?'}</span>
 		{/if}
 		<div>
-			<p class="eyebrow mb-1">chat</p>
+			<p class="eyebrow mb-1 flex items-center gap-2">
+				chat
+				<span
+					class="inline-block h-1.5 w-1.5 rounded-full {status === 'live'
+						? 'bg-green-500'
+						: status === 'reconnecting'
+							? 'bg-amber-500'
+							: 'bg-[var(--color-text-muted)]'}"
+					title={status}
+				></span>
+				{#if status !== 'live'}<span class="text-[0.6rem] normal-case">{status}</span>{/if}
+			</p>
 			<h1 class="text-2xl sm:text-3xl" style="font-family: var(--font-display);">{data.ph}</h1>
 		</div>
 	</div>

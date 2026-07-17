@@ -27,7 +27,8 @@ export const POST: RequestHandler = async ({ request, locals, platform }) => {
 	const chat = platform?.env?.CHAT;
 	if (chat) {
 		const id = chat.idFromName(`${j}__${o}`);
-		id.get()
+		chat
+			.get(id)
 			.fetch(`https://internal/broadcast`, {
 				method: 'POST',
 				body: JSON.stringify({ f: uid, b, c })

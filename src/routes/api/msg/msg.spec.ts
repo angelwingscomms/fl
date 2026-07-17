@@ -77,15 +77,16 @@ describe('POST /api/msg', () => {
 describe('POST /api/msg fan-out', () => {
 	it('broadcasts to CHAT DO when binding present', async () => {
 		const chatFetch = vi.fn().mockResolvedValue(new Response('ok'));
-		const idGet = vi.fn().mockReturnValue({ fetch: chatFetch });
-		const idFromName = vi.fn().mockReturnValue({ get: idGet });
-		const env = { CHAT: { idFromName } };
+		const get = vi.fn().mockReturnValue({ fetch: chatFetch });
+		const idFromName = vi.fn().mockReturnValue('do-id');
+		const env = { CHAT: { idFromName, get } };
 		await POST({
 			request: req({ j: 'job1', o: 'freelancer1', b: 'hi' }),
 			locals: { user: { id: 'owner1' } },
 			platform: { env }
 		} as never);
 		expect(idFromName).toHaveBeenCalledWith('job1__freelancer1');
+		expect(get).toHaveBeenCalledWith('do-id');
 		expect(chatFetch).toHaveBeenCalled();
 		const arg = chatFetch.mock.calls[0][1];
 		expect(arg.method).toBe('POST');
