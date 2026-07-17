@@ -6,6 +6,33 @@
 	let draft = $state('');
 	let sending = $state(false);
 	let box: HTMLDivElement | undefined;
+	let live = $state(false);
+	let ws: WebSocket | undefined;
+	let retry: ReturnType<typeof setTimeout> | undefined;
+
+	function connect() {
+		if (typeof WebSocket === 'undefined') return;
+		const url = `/api/chat/ws?j=${encodeURIComponent(data.j.i)}&p=${encodeURIComponent(data.p)}`;
+		try {
+			ws = new WebSocket(url);
+		} catch {
+			return;
+		}
+		ws.onopen = () => (live = true);
+		ws.onmessage = (e) => {
+			const m = JSON.parse(e.data) as { f: string; b: string; c: number };
+			if (!msgs.some((x) => x.c === m.c)) {
+				msgs = [...msgs, m];
+				scroll_bottom();
+			}
+		};
+		ws.onclose = () => {
+			live = false;
+			ws = undefined;
+			retry = setTimeout(connect, 2000);
+		};
+		ws.onerror = () => ws?.close();
+	}
 
 	function scroll_bottom() {
 		requestAnimationFrame(() => {
@@ -19,7 +46,7 @@
 	}
 
 	async function poll() {
-		if (document.hidden) return;
+		if (document.hidden || live) return;
 		try {
 			const r = await fetch(`/api/msg?j=${data.j.i}&p=${data.p}`);
 			const d = (await r.json()) as { t: { f: string; b: string; c: number }[] };
@@ -34,8 +61,13 @@
 
 	onMount(() => {
 		scroll_bottom();
+		connect();
 		const iv = setInterval(poll, 4000);
-		return () => clearInterval(iv);
+		return () => {
+			clearInterval(iv);
+			if (retry) clearTimeout(retry);
+			ws?.close();
+		};
 	});
 
 	async function send() {

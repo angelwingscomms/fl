@@ -169,9 +169,14 @@ app.d.ts Env gains `R2: R2Bucket`.
   between job.u and the non-owner participant. Guard: uid === job.u || uid === p. Returns
   `{ t: [{ f, b, c }] }` sorted by c asc, filtered to the pair (job.u, p).
 - `/jobs/[id]/chat/[fid]` page — fid = the non-owner participant. Access: uid === job.u ||
-  uid === fid. Loads job title, peer handle+avatar, thread. Client polls GET /api/msg every
-  4s (setInterval, cleared on destroy), optimistic append on send. **No websockets** — delete
-  the old `/jobs/[id]/msg/[fid]` route entirely; `ws/` dir stays but is unused.
+  uid === fid. Loads job title, peer handle+avatar, thread. Send goes through POST /api/msg
+  (optimistic append). Realtime receive over a Cloudflare Durable Object: client opens
+  `WebSocket('/api/chat/ws?j=&p=')`; the worker decodes the session cookie, routes to
+  `env.CHAT.idFromName(j + '__' + p)`, and the DO broadcasts every POST fan-out to connected
+  sockets. **POST /api/msg is the source of truth** (persists to Qdrant, then fire-and-forget
+  broadcasts to the DO). The 4s poll of GET /api/msg stays as a fallback when the socket is
+  closed or Durable Objects are unavailable (plain `vite dev`). Auto-reconnect with backoff.
+  Delete the old `/jobs/[id]/msg/[fid]` route entirely; the old `ws/` Cloud Run server is dead.
 - `/chats` inbox — msgs where `f===uid` OR `o===uid` (one `find` with should-filter), group
   by `${j}:${peer}` , newest first; each row: job title, peer handle, last message, time,
   link to `/jobs/[j]/chat/[non-owner-uid]`.

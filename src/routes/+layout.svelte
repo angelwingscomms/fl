@@ -82,7 +82,6 @@
 		<div class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-6 text-sm text-[var(--color-text-muted)]">
 			<a class="link-fl hover:text-[var(--color-text)]" href="/jobs/new">Post a job</a>
 			<a class="link-fl hover:text-[var(--color-text)]" href="/login">Sign in</a>
-			<span class="ml-auto eyebrow">made with embeddings</span>
 		</div>
 	</div>
 </footer>

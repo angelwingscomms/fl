@@ -3,7 +3,7 @@
 	"name": "fl",
 	"compatibility_date": "2026-07-14",
 	"compatibility_flags": ["nodejs_als"],
-	"main": ".svelte-kit/cloudflare/_worker.js",
+	"main": "src/workers/index.ts",
 	"assets": {
 		"binding": "ASSETS",
 		"directory": ".svelte-kit/cloudflare"
@@ -11,6 +11,10 @@
 	"workers_dev": true,
 	"preview_urls": true,
 	"r2_buckets": [{ "binding": "R2", "bucket_name": "fl-img" }],
+	"durable_objects": {
+		"bindings": [{ "name": "CHAT", "class_name": "ChatRoom" }]
+	},
+	"migrations": [{ "tag": "v1", "new_classes": ["ChatRoom"] }],
 	"vars": {
 		"PAYSTACK_PUBLIC_KEY_TEST": "pk_test_a30df8e38870ce565a29e0d20cdca29a8c861cf6",
 		"PAYSTACK_PUBLIC_KEY_LIVE": "pk_live_04ee2be5b0a9351b8e055a36b1062dafb4a0eaa4"

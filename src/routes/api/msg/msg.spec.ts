@@ -74,6 +74,34 @@ describe('POST /api/msg', () => {
 	});
 });
 
+describe('POST /api/msg fan-out', () => {
+	it('broadcasts to CHAT DO when binding present', async () => {
+		const chatFetch = vi.fn().mockResolvedValue(new Response('ok'));
+		const idGet = vi.fn().mockReturnValue({ fetch: chatFetch });
+		const idFromName = vi.fn().mockReturnValue({ get: idGet });
+		const env = { CHAT: { idFromName } };
+		await POST({
+			request: req({ j: 'job1', o: 'freelancer1', b: 'hi' }),
+			locals: { user: { id: 'owner1' } },
+			platform: { env }
+		} as never);
+		expect(idFromName).toHaveBeenCalledWith('job1__freelancer1');
+		expect(chatFetch).toHaveBeenCalled();
+		const arg = chatFetch.mock.calls[0][1];
+		expect(arg.method).toBe('POST');
+		expect(JSON.parse(arg.body).b).toBe('hi');
+	});
+
+	it('does not throw when CHAT binding missing', async () => {
+		const res = await POST({
+			request: req({ j: 'job1', o: 'freelancer1', b: 'hi' }),
+			locals: { user: { id: 'owner1' } },
+			platform: { env: {} }
+		} as never);
+		expect(res.status).toBe(200);
+	});
+});
+
 describe('GET /api/msg', () => {
 	it('filters to the pair and sorts asc', async () => {
 		find.mockResolvedValue([

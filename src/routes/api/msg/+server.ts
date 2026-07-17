@@ -3,7 +3,7 @@ import type { RequestHandler } from './$types';
 import { get_uid } from '$lib/server/session';
 import { get, find, upsert, ZERO } from '$lib/server/qdrant';
 
-export const POST: RequestHandler = async ({ request, locals }) => {
+export const POST: RequestHandler = async ({ request, locals, platform }) => {
 	const uid = get_uid({ locals });
 	if (!uid) throw error(401, 'login required');
 	const body = (await request.json().catch(() => null)) as { j?: string; o?: string; b?: string };
@@ -19,9 +19,22 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 	const ok = uid === owner ? o !== uid : o === owner;
 	if (!ok) throw error(403, 'not allowed');
 
+	const c = Date.now();
 	await upsert([
-		{ id: crypto.randomUUID(), vector: ZERO(), payload: { s: 'm', j, f: uid, o, b, c: Date.now() } }
+		{ id: crypto.randomUUID(), vector: ZERO(), payload: { s: 'm', j, f: uid, o, b, c } }
 	]);
+
+	const chat = platform?.env?.CHAT;
+	if (chat) {
+		const id = chat.idFromName(`${j}__${o}`);
+		id.get()
+			.fetch(`https://internal/broadcast`, {
+				method: 'POST',
+				body: JSON.stringify({ f: uid, b, c })
+			})
+			.catch(() => {});
+	}
+
 	return json({ ok: true });
 };
 

@@ -22,6 +22,7 @@ declare global {
 			PAYSTACK_TEST?: string;
 			PAYSTACK_PUBLIC_KEY_TEST?: string;
 			PAYSTACK_PUBLIC_KEY_LIVE?: string;
+			CHAT?: DurableObjectNamespace;
 		}
 
 		// interface Error {}
