@@ -1,9 +1,13 @@
-export interface User {
+export type User = {
 	s: 'u';
 	n: string;
-	p?: string;
 	m?: string;
-	d: number;
-	o?: 'google' | 'local';
 	h?: string;
-}
+	o?: 'google' | 'local';
+	d: number;
+	t?: string;
+	l?: string[];
+	i?: string[];
+	a?: string;
+	b?: number;
+};

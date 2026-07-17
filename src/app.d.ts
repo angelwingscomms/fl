@@ -16,6 +16,12 @@ declare global {
 			GOOGLE_ID?: string;
 			GOOGLE_SECRET?: string;
 			SECRET?: string;
+			R2?: R2Bucket;
+			PAYSTACK_SECRET_KEY_TEST?: string;
+			PAYSTACK_SECRET_KEY_LIVE?: string;
+			PAYSTACK_TEST?: string;
+			PAYSTACK_PUBLIC_KEY_TEST?: string;
+			PAYSTACK_PUBLIC_KEY_LIVE?: string;
 		}
 
 		// interface Error {}

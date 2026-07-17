@@ -13,7 +13,6 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 	const session = await encode_session({
 		id: r.id,
 		name: r.user.n,
-		picture: r.user.p,
 		email: r.user.m
 	});
 	cookies.set('session', session, { path: '/', httpOnly: true, maxAge: 604800, sameSite: 'lax' });

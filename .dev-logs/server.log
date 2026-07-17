@@ -2,144 +2,76 @@
 > fl@0.0.1 dev /home/ed/i/fl
 > vite dev
 
+7:26:07 AM [vite] (client) Re-optimizing dependencies because lockfile has changed
+7:26:07 AM [vite] (ssr) Re-optimizing dependencies because lockfile has changed
 
-  VITE v8.1.4  ready in 2496 ms
+  VITE v8.1.4  ready in 2627 ms
 
   ➜  Local:   http://localhost:2727/
   ➜  Network: use --host to expose
   ➜  press h + enter to show help
 Using secrets defined in .dev.vars
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-518 |    }
-519 |  }
-520 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-521 |  @layer base {
-522 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-518 |    }
-519 |  }
-520 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-521 |  @layer base {
-522 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-518 |    }
-519 |  }
-520 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-521 |  @layer base {
-522 |    *,	*::before,	*::after {
-7:30:13 AM [vite-plugin-svelte] src/routes/profile/+page.svelte:15:35 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
-https://svelte.dev/e/state_referenced_locally
-7:30:13 AM [vite-plugin-svelte] src/routes/profile/+page.svelte:16:36 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
-https://svelte.dev/e/state_referenced_locally
-7:30:36 AM [vite] (client) hmr update /src/routes/layout.css
-7:30:36 AM [vite] (ssr) page reload src/lib/server/qdrant.ts
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-518 |    }
-519 |  }
-520 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-521 |  @layer base {
-522 |    *,	*::before,	*::after {
-7:30:48 AM [vite] (client) hmr update /src/routes/layout.css
-7:30:48 AM [vite] (ssr) page reload src/lib/server/qdrant.ts
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-518 |    }
-519 |  }
-520 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-521 |  @layer base {
-522 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-518 |    }
-519 |  }
-520 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-521 |  @layer base {
-522 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-518 |    }
-519 |  }
-520 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-521 |  @layer base {
-522 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-518 |    }
-519 |  }
-520 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-521 |  @layer base {
-522 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-518 |    }
-519 |  }
-520 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-521 |  @layer base {
-522 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-518 |    }
-519 |  }
-520 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-521 |  @layer base {
-522 |    *,	*::before,	*::after {
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-518 |    }
-519 |  }
-520 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-521 |  @layer base {
-522 |    *,	*::before,	*::after {
-7:31:56 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
-7:31:56 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
-7:31:56 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
-7:31:56 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/6.js
-7:31:56 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/9.js
-7:31:56 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/10.js
-7:31:56 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/11.js
-7:31:56 AM [vite] (client) page reload .svelte-kit/generated/client/app.js
-7:31:56 AM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
-7:31:56 AM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
-7:31:56 AM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
-7:31:56 AM [vite] (client) page reload .svelte-kit/generated/root.js
-7:31:56 AM [vite] (ssr) page reload .svelte-kit/generated/root.js
-7:31:56 AM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
-7:32:08 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
-7:32:08 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
-7:32:08 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
-7:32:08 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/6.js
-7:32:08 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/9.js
-7:32:08 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/10.js
-7:32:08 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/11.js
-7:32:08 AM [vite] (client) page reload .svelte-kit/generated/client/app.js
-7:32:08 AM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
-7:32:08 AM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
-7:32:08 AM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
-7:32:08 AM [vite] (client) page reload .svelte-kit/generated/root.js
-7:32:08 AM [vite] (ssr) page reload .svelte-kit/generated/root.js
-7:32:08 AM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
-7:32:21 AM [vite] (client) hmr update /src/routes/layout.css
-7:32:21 AM [vite] (ssr) page reload src/lib/server/qdrant.ts
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-518 |    }
-519 |  }
-520 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-521 |  @layer base {
-522 |    *,	*::before,	*::after {
-8:41:36 AM [vite] (client) hmr update /src/routes/layout.css
-8:41:36 AM [vite] (ssr) page reload src/lib/server/qdrant.ts
-[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-518 |    }
-519 |  }
-520 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
-    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-521 |  @layer base {
-522 |    *,	*::before,	*::after {
+Using secrets defined in .dev.vars
 
-  ➜  Local:   http://localhost:2727/
-  ➜  Network: use --host to expose
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+592 |    }
+593 |  }
+594 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+595 |  @layer base {
+596 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+592 |    }
+593 |  }
+594 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+595 |  @layer base {
+596 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+592 |    }
+593 |  }
+594 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+595 |  @layer base {
+596 |    *,	*::before,	*::after {
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+592 |    }
+593 |  }
+594 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+595 |  @layer base {
+596 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+592 |    }
+593 |  }
+594 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+595 |  @layer base {
+596 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+592 |    }
+593 |  }
+594 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+595 |  @layer base {
+596 |    *,	*::before,	*::after {

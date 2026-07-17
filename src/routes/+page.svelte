@@ -23,12 +23,25 @@
 	</div>
 </section>
 
-{#if data.profiles?.length}
+{#if data.f?.length}
 	<section class="mt-12">
 		<h2 class="text-2xl font-bold mb-4">Freelancers</h2>
-		<div class="flex flex-wrap gap-2">
-			{#each data.profiles as p (p.handle)}
-				<a class="tag-fl hover:!text-[var(--color-accent)]" href="/u/{p.handle}">{p.handle}</a>
+		<div class="grid gap-3 sm:grid-cols-2">
+			{#each data.f as p (p.n)}
+				<a class="card-fl p-4 flex gap-3 items-start" href="/u/{p.n}">
+					{#if p.a}
+						<img src="/i/{p.a}" alt="" class="w-10 h-10 rounded-full object-cover shrink-0" />
+					{:else}
+						<span
+							class="w-10 h-10 rounded-full flex items-center justify-center bg-[var(--color-surface)] border border-[var(--color-border)] uppercase font-bold shrink-0"
+							>{p.n[0]}</span
+						>
+					{/if}
+					<div>
+						<h3 class="font-semibold">{p.n}</h3>
+						<p class="text-sm text-[var(--color-text-muted)]">{p.t}</p>
+					</div>
+				</a>
 			{/each}
 		</div>
 	</section>

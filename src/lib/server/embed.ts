@@ -15,7 +15,7 @@ export async function embed(text: string, env: { OPENROUTER_KEY?: string }): Pro
 
 // local fallback so dev/tests work without a key (consistent dim within one env).
 function fallback(text: string): number[] {
-	const dim = 512;
+	const dim = 4096;
 	const v = new Array(dim).fill(0);
 	for (const w of text.toLowerCase().match(/[a-z0-9]+/g) ?? []) {
 		let h = 0;

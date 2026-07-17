@@ -1,10 +1,11 @@
 import { google_client } from '$lib/server/oauth';
 import { encode_session } from '$lib/server/session';
-import { save_user } from '$lib/server/qdrant';
+import { create_user, get_user_by_email } from '$lib/server/user';
+import { env } from '$env/dynamic/private';
 import type { RequestEvent } from '@sveltejs/kit';
 
 export async function GET(event: RequestEvent): Promise<Response> {
-	const genv = event.platform!.env;
+	const genv = { GOOGLE_ID: env.GOOGLE_ID, GOOGLE_SECRET: env.GOOGLE_SECRET };
 	const code = event.url.searchParams.get('code');
 	const state = event.url.searchParams.get('state');
 	const stored_state = event.cookies.get('oauth_state') ?? null;
@@ -23,17 +24,20 @@ export async function GET(event: RequestEvent): Promise<Response> {
 		headers: { Authorization: `Bearer ${tokens.accessToken()}` }
 	});
 	if (!ures.ok) return new Response(null, { status: 400 });
-	const guser = (await ures.json()) as {
-		sub: string;
-		name: string;
-		picture?: string;
-		email?: string;
-	};
-	await save_user(guser.sub, guser.name, guser.picture, guser.email);
+	const guser = (await ures.json()) as { sub: string; name: string; email?: string };
+	if (!guser.email) return new Response(null, { status: 400 });
+	const existing = await get_user_by_email(guser.email);
+	const n = guser.name
+		.toLowerCase()
+		.replace(/[^a-z0-9-]/g, '-')
+		.replace(/-+/g, '-')
+		.replace(/^-|-$/g, '');
+	const id = existing
+		? existing.id
+		: await create_user({ n, m: guser.email, o: 'google', d: Date.now() });
 	const session = await encode_session({
-		id: guser.sub,
-		name: guser.name,
-		picture: guser.picture,
+		id,
+		name: existing?.user.n ?? n,
 		email: guser.email
 	});
 	event.cookies.set('session', session, {

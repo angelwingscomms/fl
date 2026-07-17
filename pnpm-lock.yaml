@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@paystack/inline-js':
+        specifier: ^2.22.1
+        version: 2.23.1
       arctic:
         specifier: ^3.7.0
         version: 3.7.0
@@ -552,6 +555,10 @@ packages:
 
   '@oxc-project/types@0.139.0':
     resolution: {integrity: sha512-r9gHphtCs+1M7J0pw6Sn/hh/Wpa/iQrOOkrNAlVLF/gHq+/CJmHIWKKUUhdWjcD6CIa8idarspCsASiXCXvFUw==}
+
+  '@paystack/inline-js@2.23.1':
+    resolution: {integrity: sha512-yf3mSh6CQMfhSbdiCO+j+yqnguw01vqSMuOIL2gCMYSijS3iiUSJyaN8O8K9m4ZdW5njXNMKJq8H945Dqt/f+g==}
+    engines: {node: '>= 22.0.0'}
 
   '@playwright/test@1.61.1':
     resolution: {integrity: sha512-8nKv6+0RJSL9FE4jYOEGXnPeM/Hg12qZpmqzZjRh3qM0Y7c3z1mrOTfFLids72RDQYVh9WpLEfR5WdpNX4fkig==}
@@ -2149,6 +2156,8 @@ snapshots:
       '@oslojs/encoding': 0.4.1
 
   '@oxc-project/types@0.139.0': {}
+
+  '@paystack/inline-js@2.23.1': {}
 
   '@playwright/test@1.61.1':
     dependencies:

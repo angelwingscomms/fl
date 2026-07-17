@@ -1,6 +1,6 @@
 import { Google, generateState, generateCodeVerifier } from 'arctic';
-import type { SecretVal } from './qdrant';
 
+export type SecretVal = string | { get?: () => Promise<string> } | undefined;
 export type GoogleEnv = { GOOGLE_ID?: SecretVal; GOOGLE_SECRET?: SecretVal };
 
 export async function get_secret(v: SecretVal): Promise<string> {

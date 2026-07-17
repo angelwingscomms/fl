@@ -1,99 +1,59 @@
 import type { User } from '$lib/types/user';
-import { ensure_coll, find_by, get, upsert, ZERO } from './qdrant';
+import { ensure_coll, find_by, get, set_payload, upsert, ZERO } from './qdrant';
 import { hash_pw, verify_pw } from './pw';
 
-const local = new Map<string, User>();
-
-export async function save_user(
-	id: string,
-	name: string,
-	picture?: string,
-	email?: string,
-	provider: 'google' | 'local' = 'google'
-): Promise<void> {
-	const u: User = { s: 'u', n: name, p: picture, m: email, d: Date.now(), o: provider };
-	const c = await get_user(id);
-	if (c) {
-		u.d = c.d;
-		if (c.h) u.h = c.h;
-	}
-	try {
-		await upsert([{ id, vector: ZERO(), payload: u as unknown as Record<string, unknown> }]);
-	} catch {
-		local.set(id, u);
-	}
-}
-
 export async function get_user(id: string): Promise<User | null> {
-	try {
-		const r = await get([id]);
-		const u = r[0]?.payload as Record<string, unknown> | undefined;
-		if (u?.s === 'u') {
-			return {
-				s: 'u',
-				n: u.n as string,
-				p: u.p as string | undefined,
-				m: u.m as string | undefined,
-				d: u.d as number,
-				o: u.o as 'google' | 'local' | undefined,
-				h: u.h as string | undefined
-			};
-		}
-		return null;
-	} catch {
-		return local.get(id) || null;
-	}
+	const r = await get([id]);
+	const p = r[0]?.payload;
+	return p?.s === 'u' ? (p as unknown as User) : null;
 }
 
 export async function get_user_by_email(email: string): Promise<{ id: string; user: User } | null> {
-	const em = email.toLowerCase();
-	const look = (p: Record<string, unknown>, id: string): { id: string; user: User } | null => {
-		if (p.s === 'u' && String(p.m ?? '').toLowerCase() === em) {
-			return {
-				id,
-				user: {
-					s: 'u',
-					n: p.n as string,
-					p: p.p as string | undefined,
-					m: p.m as string | undefined,
-					d: p.d as number,
-					o: p.o as 'google' | 'local' | undefined,
-					h: p.h as string | undefined
-				}
-			};
-		}
-		return null;
-	};
-	try {
-		// server-side filtered lookup via the payload index on 'm'.
-		await ensure_coll();
-		const res = await find_by('m', em, 4);
-		for (const p of res) {
-			const r = look(p.payload as Record<string, unknown>, p.id);
-			if (r) return r;
-		}
-	} catch {
-		// ignore — fall through to local map
+	const r = await find_by('m', email.toLowerCase(), 1);
+	const p = r[0];
+	return p ? { id: p.id, user: p.payload as unknown as User } : null;
+}
+
+export async function get_user_by_handle(handle: string): Promise<{ id: string; user: User } | null> {
+	const r = await find_by('n', handle.toLowerCase(), 1);
+	const p = r[0];
+	return p ? { id: p.id, user: p.payload as unknown as User } : null;
+}
+
+async function unique_handle(base: string, self_id?: string): Promise<string> {
+	let cand = base.toLowerCase().replace(/[^a-z0-9-]/g, '');
+	if (cand.length < 2) cand = 'user';
+	let n = cand;
+	let i = 1;
+	for (;;) {
+		const hit = await get_user_by_handle(n);
+		if (!hit || hit.id === self_id) return n;
+		i++;
+		n = `${cand}-${i}`;
 	}
-	for (const [id, u] of local) {
-		const r = look(u as unknown as Record<string, unknown>, id);
-		if (r) return r;
-	}
-	return null;
+}
+
+export async function create_user(fields: Partial<User>): Promise<string> {
+	await ensure_coll();
+	const id = crypto.randomUUID();
+	const n = await unique_handle(fields.n || fields.m?.split('@')[0] || '');
+	const u: User = { ...fields, s: 'u', n, d: fields.d ?? Date.now() };
+	await upsert([{ id, vector: ZERO(), payload: u as unknown as Record<string, unknown> }]);
+	return id;
+}
+
+export async function update_user(id: string, fields: Partial<User>): Promise<void> {
+	await set_payload(id, fields as Record<string, unknown>);
+}
+
+export async function credit_user(id: string, kobo: number): Promise<void> {
+	const u = await get_user(id);
+	await set_payload(id, { b: (u?.b ?? 0) + kobo });
 }
 
 export async function create_pw_user(email: string, password: string): Promise<string> {
-	const id = crypto.randomUUID();
 	const h = await hash_pw(password);
-	await save_user(id, email, undefined, email, 'local');
-	const c = await get_user(id);
-	const u: User = { s: 'u', n: email, m: email, d: c?.d ?? Date.now(), o: 'local', h };
-	try {
-		await upsert([{ id, vector: ZERO(), payload: u as unknown as Record<string, unknown> }]);
-	} catch {
-		local.set(id, u);
-	}
-	return id;
+	return create_user({ n: email.split('@')[0], m: email.toLowerCase(), h, o: 'local', d: Date.now() });
 }
 
 export async function verify_user_pw(

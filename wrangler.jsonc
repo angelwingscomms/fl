@@ -10,32 +10,9 @@
 	},
 	"workers_dev": true,
 	"preview_urls": true,
-	"secrets_store_secrets": [
-		{
-			"binding": "QDRANT_URL",
-			"store_id": "45748cb1c67946df943075fa14cb8815",
-			"secret_name": "QDRANT_URL"
-		},
-		{
-			"binding": "QDRANT_KEY",
-			"store_id": "45748cb1c67946df943075fa14cb8815",
-			"secret_name": "QDRANT_KEY"
-		},
-		{
-			"binding": "OPENROUTER_KEY",
-			"store_id": "45748cb1c67946df943075fa14cb8815",
-			"secret_name": "OPENROUTER_KEY"
-		},
-		{
-			"binding": "GOOGLE_ID",
-			"store_id": "45748cb1c67946df943075fa14cb8815",
-			"secret_name": "GOOGLE_ID"
-		},
-		{
-			"binding": "GOOGLE_SECRET",
-			"store_id": "45748cb1c67946df943075fa14cb8815",
-			"secret_name": "GOOGLE_SECRET"
-		},
-		{ "binding": "SECRET", "store_id": "45748cb1c67946df943075fa14cb8815", "secret_name": "SECRET" }
-	]
+	"r2_buckets": [{ "binding": "R2", "bucket_name": "fl-img" }],
+	"vars": {
+		"PAYSTACK_PUBLIC_KEY_TEST": "pk_test_a30df8e38870ce565a29e0d20cdca29a8c861cf6",
+		"PAYSTACK_PUBLIC_KEY_LIVE": "pk_live_04ee2be5b0a9351b8e055a36b1062dafb4a0eaa4"
+	}
 }

@@ -3,16 +3,24 @@
 </script>
 
 <div class="flex items-center gap-3 mb-1">
-	<h1 class="text-4xl font-bold">{data.handle}</h1>
+	{#if data.a}
+		<img src="/i/{data.a}" alt="" class="w-12 h-12 rounded-full object-cover" />
+	{:else}
+		<span
+			class="w-12 h-12 rounded-full flex items-center justify-center bg-[var(--color-surface)] border border-[var(--color-border)] uppercase font-bold"
+			>{data.n[0]}</span
+		>
+	{/if}
+	<h1 class="text-4xl font-bold">{data.n}</h1>
 	{#if data.is_owner}<a class="tag-fl hover:!text-[var(--color-accent)]" href="/profile">edit</a
 		>{/if}
 </div>
 
 {#if data.i.length}
 	<div class="grid grid-cols-3 gap-3 my-6">
-		{#each data.i as url (url)}
+		{#each data.i as k (k)}
 			<img
-				src={url}
+				src="/i/{k}"
 				alt=""
 				class="aspect-square w-full object-cover rounded-[var(--radius-xl)] border border-[var(--color-border)]"
 			/>
