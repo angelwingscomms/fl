@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { reveal, magnet } from '$lib/motion';
+
 	let mode = $state<'login' | 'register'>('login');
 	let email = $state('');
 	let password = $state('');
@@ -26,99 +28,55 @@
 	}
 </script>
 
-<main>
-	<h1>{mode === 'login' ? 'Sign in' : 'Create account'}</h1>
-	<a class="google" href="/auth/google">Continue with Google</a>
-	<div class="sep">or</div>
-	<form
-		onsubmit={(e) => {
-			e.preventDefault();
-			submit();
-		}}
-	>
-		<input type="email" placeholder="Email" bind:value={email} autocomplete="email" />
-		<input
-			type="password"
-			placeholder="Password"
-			bind:value={password}
-			autocomplete="current-password"
-		/>
-		<button type="submit" disabled={busy}
-			>{busy ? '…' : mode === 'login' ? 'Sign in' : 'Sign up'}</button
-		>
-	</form>
-	{#if msg}<p class="msg">{msg}</p>{/if}
-	<button class="switch" onclick={() => (mode = mode === 'login' ? 'register' : 'login')}>
-		{mode === 'login' ? 'Need an account? Register' : 'Have an account? Sign in'}
-	</button>
-</main>
+<section class="container-fl py-20">
+	<div class="card-fl p-8 sm:p-10 mx-auto max-w-md" use:reveal>
+		<p class="eyebrow mb-3 text-center">welcome back</p>
+		<h1 class="text-2xl sm:text-3xl text-center mb-8" style="font-family: var(--font-display);">
+			{mode === 'login' ? 'sign in to' : 'join'} <em>fl</em>
+		</h1>
 
-<style>
-	main {
-		max-width: 380px;
-		margin: 5rem auto;
-		padding: 0 1.25rem;
-		text-align: center;
-	}
-	h1 {
-		color: var(--color-text);
-		margin-bottom: 1.5rem;
-	}
-	.google {
-		display: block;
-		padding: 0.8rem;
-		border: 1px solid var(--color-border);
-		border-radius: 9px;
-		text-decoration: none;
-		color: var(--color-text);
-		font-weight: 600;
-		background: var(--color-surface);
-	}
-	.sep {
-		color: var(--color-text-muted);
-		font-size: 0.8rem;
-		margin: 1rem 0;
-	}
-	form {
-		display: grid;
-		gap: 0.6rem;
-	}
-	input {
-		padding: 0.8rem;
-		border: 1px solid var(--color-border);
-		border-radius: 9px;
-		font-size: 1rem;
-		outline: none;
-		background: var(--color-surface);
-		color: var(--color-text);
-	}
-	input:focus {
-		border-color: var(--color-accent);
-		box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 15%, transparent);
-	}
-	button[type='submit'] {
-		padding: 0.8rem;
-		border: none;
-		border-radius: 9px;
-		background: var(--color-accent);
-		color: #fff;
-		font-weight: 600;
-		font-size: 1rem;
-		cursor: pointer;
-	}
-	button[type='submit']:disabled {
-		opacity: 0.6;
-	}
-	.msg {
-		color: #dc2626;
-		font-size: 0.9rem;
-	}
-	.switch {
-		margin-top: 1.2rem;
-		background: none;
-		border: none;
-		color: var(--color-accent);
-		cursor: pointer;
-		font-size: 0.9rem;
-	}
-</style>
+		<a class="btn-ghost w-full mb-5" href="/auth/google" use:magnet={0.15}>continue with google</a>
+
+		<div class="flex items-center gap-3 my-5 text-xs text-[var(--color-text-muted)]">
+			<span class="flex-1 h-px bg-[var(--color-border)]"></span>
+			or
+			<span class="flex-1 h-px bg-[var(--color-border)]"></span>
+		</div>
+
+		<form
+			class="space-y-3"
+			onsubmit={(e) => {
+				e.preventDefault();
+				submit();
+			}}
+		>
+			<input
+				type="email"
+				placeholder="email"
+				bind:value={email}
+				autocomplete="email"
+				class="field-fl"
+			/>
+			<input
+				type="password"
+				placeholder="password"
+				bind:value={password}
+				autocomplete="current-password"
+				class="field-fl"
+			/>
+			<button type="submit" class="btn-fl w-full justify-center" disabled={busy}>
+				{busy ? '…' : mode === 'login' ? 'sign in' : 'sign up'}
+				<span class="arrow">→</span>
+			</button>
+		</form>
+
+		{#if msg}<p class="text-sm text-[var(--color-accent)] mt-4 text-center">{msg}</p>{/if}
+
+		<button
+			class="link-fl block mx-auto mt-6 text-sm text-[var(--color-text-muted)]"
+			onclick={() => (mode = mode === 'login' ? 'register' : 'login')}
+		>
+			{mode === 'login' ? "need an account? register" : "have an account? sign in"}
+		</button>
+	</div>
+</section>
