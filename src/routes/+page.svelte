@@ -3,8 +3,6 @@
 
 	let { data } = $props();
 
-	let video_el = $state<HTMLVideoElement>();
-	let video_ok = $state(true);
 	let parallax_y = $state(0);
 
 	$effect(() => {
@@ -24,15 +22,42 @@
 		};
 	});
 
+	let scrolly_el = $state<HTMLElement>();
+	let scrub_el = $state<HTMLVideoElement>();
+	let step_i = $state(0);
+	let scrolly_on = $state(true);
+
 	$effect(() => {
-		if (typeof document === 'undefined') return;
-		function on_visibility() {
-			if (!video_el) return;
-			if (document.hidden) video_el.pause();
-			else video_el.play().catch(() => {});
+		if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+			scrolly_on = false;
+			return;
 		}
-		document.addEventListener('visibilitychange', on_visibility);
-		return () => document.removeEventListener('visibilitychange', on_visibility);
+		let raf = 0;
+		let live = false;
+		let t = 0;
+		function tick() {
+			if (scrolly_el) {
+				const r = scrolly_el.getBoundingClientRect();
+				const p = Math.max(0, Math.min(1, -r.top / (r.height - window.innerHeight)));
+				step_i = Math.min(2, Math.floor(p * 3));
+				const v = scrub_el;
+				if (v && v.duration) {
+					t += (p * (v.duration - 0.05) - t) * 0.15;
+					if (Math.abs(v.currentTime - t) > 0.004) v.currentTime = t;
+				}
+			}
+			if (live) raf = requestAnimationFrame(tick);
+		}
+		const io = new IntersectionObserver(([e]) => {
+			live = e.isIntersecting;
+			cancelAnimationFrame(raf);
+			if (live) raf = requestAnimationFrame(tick);
+		});
+		if (scrolly_el) io.observe(scrolly_el);
+		return () => {
+			io.disconnect();
+			cancelAnimationFrame(raf);
+		};
 	});
 
 	const steps = [
@@ -89,25 +114,7 @@
 		class="relative aspect-[4/5] overflow-hidden"
 		style="border-radius: 999px 999px var(--radius-lg) var(--radius-lg); transform: translateY({parallax_y}px);"
 	>
-		{#if !video_ok}
-			<div
-				class="absolute inset-0"
-				style="background: conic-gradient(from 180deg at 50% 50%, var(--color-accent), var(--color-canvas), var(--color-accent-hover), var(--color-canvas), var(--color-accent)); animation: spin 12s linear infinite;"
-			></div>
-		{/if}
-		<video
-			bind:this={video_el}
-			class="w-full h-full object-cover"
-			src="/hero.mp4"
-			poster="/hero.jpg"
-			autoplay
-			muted
-			loop
-			playsinline
-			preload="metadata"
-			onerror={() => (video_ok = false)}
-			style={video_ok ? '' : 'display:none'}
-		></video>
+		<img src="/hero.jpg" alt="" class="w-full h-full object-cover" />
 	</div>
 </section>
 
@@ -128,26 +135,71 @@
 	</section>
 {/if}
 
-<section class="container-wide py-20">
-	<p class="eyebrow mb-10">how it works</p>
-	<div class="space-y-14">
-		{#each steps as s, i (s.n)}
-			<div
-				class="grid gap-4 sm:grid-cols-[auto_1fr] sm:items-center sm:gap-10"
-				use:reveal={{ delay: i * 120 }}
-			>
-				<span
-					style="font-family: var(--font-display); font-size: clamp(3.5rem, 9vw, 7rem); line-height: 1; color: var(--color-accent); opacity: 0.85;"
-					>{s.n}</span
+{#if scrolly_on}
+	<section bind:this={scrolly_el} style="height: 340vh;">
+		<div class="sticky top-0 h-screen flex items-center overflow-hidden">
+			<div class="container-wide grid gap-8 items-center w-full lg:grid-cols-2 lg:gap-14">
+				<div
+					class="relative aspect-[4/5] w-full max-w-[44vh] mx-auto lg:max-w-[56vh] lg:mx-0 overflow-hidden"
+					style="border-radius: 999px 999px var(--radius-lg) var(--radius-lg);"
 				>
+					<video
+						bind:this={scrub_el}
+						class="w-full h-full object-cover"
+						src="/hero.mp4"
+						poster="/hero.jpg"
+						muted
+						playsinline
+						preload="auto"
+					></video>
+				</div>
 				<div>
-					<h3 class="text-xl sm:text-2xl mb-1" style="font-family: var(--font-display);">{s.h}</h3>
-					<p class="text-[var(--color-text-muted)]">{s.d}</p>
+					<p class="eyebrow mb-8">how it works</p>
+					<div class="beats">
+						{#each steps as s, i (s.n)}
+							<div class:active={step_i === i} aria-hidden={step_i !== i}>
+								<span
+									style="font-family: var(--font-display); font-size: clamp(3.5rem, 9vw, 7rem); line-height: 1; color: var(--color-accent); opacity: 0.85;"
+									>{s.n}</span
+								>
+								<h3 class="text-2xl sm:text-3xl mt-3 mb-2" style="font-family: var(--font-display);">
+									{s.h}
+								</h3>
+								<p class="text-[var(--color-text-muted)]">{s.d}</p>
+							</div>
+						{/each}
+					</div>
+					<div class="mt-10 flex gap-2" aria-hidden="true">
+						{#each steps as s, i (s.n)}
+							<span class="tick" class:on={step_i >= i}></span>
+						{/each}
+					</div>
 				</div>
 			</div>
-		{/each}
-	</div>
-</section>
+		</div>
+	</section>
+{:else}
+	<section class="container-wide py-20">
+		<p class="eyebrow mb-10">how it works</p>
+		<div class="space-y-14">
+			{#each steps as s, i (s.n)}
+				<div
+					class="grid gap-4 sm:grid-cols-[auto_1fr] sm:items-center sm:gap-10"
+					use:reveal={{ delay: i * 120 }}
+				>
+					<span
+						style="font-family: var(--font-display); font-size: clamp(3.5rem, 9vw, 7rem); line-height: 1; color: var(--color-accent); opacity: 0.85;"
+						>{s.n}</span
+					>
+					<div>
+						<h3 class="text-xl sm:text-2xl mb-1" style="font-family: var(--font-display);">{s.h}</h3>
+						<p class="text-[var(--color-text-muted)]">{s.d}</p>
+					</div>
+				</div>
+			{/each}
+		</div>
+	</section>
+{/if}
 
 {#if data.f.length}
 	<section class="container-wide py-20">
@@ -176,9 +228,28 @@
 {/if}
 
 <style>
-	@keyframes spin {
-		to {
-			transform: rotate(360deg);
-		}
+	.beats {
+		display: grid;
+	}
+	.beats > div {
+		grid-area: 1 / 1;
+		opacity: 0;
+		transform: translateY(16px);
+		transition:
+			opacity 0.45s var(--ease),
+			transform 0.45s var(--ease);
+	}
+	.beats > div.active {
+		opacity: 1;
+		transform: none;
+	}
+	.tick {
+		width: 2.5rem;
+		height: 2px;
+		background: var(--color-border);
+		transition: background 0.3s var(--ease);
+	}
+	.tick.on {
+		background: var(--color-accent);
 	}
 </style>

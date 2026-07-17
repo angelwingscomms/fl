@@ -120,16 +120,22 @@ row, CTA collapses to `+`.
    translateY 110% → 0, 80ms stagger): `Work finds` newline `the <em>worker</em>.` Sub
    (max-w 34ch): "Post a job and it's matched — by meaning, not keywords — to people who
    can actually do it. No bids. No browsing. Escrow until it's done." CTAs: btn-fl "Post a
-   job" (magnet) + btn-ghost "Write your profile". Media: `static/hero.mp4` if present —
-   4s loop, muted autoplay playsinline, poster `static/hero.jpg`, in an arch mask
-   (`border-radius: 999px 999px var(--radius-lg) var(--radius-lg)`), slight parallax on
-   scroll (transform from scrollY, ≤ 20px); **if hero.mp4 absent, render the arch with a
-   CSS conic/radial gradient blob animation instead — page must not look broken.**
+   job" (magnet) + btn-ghost "Write your profile". Media: `static/hero.jpg` still (frame 0
+   of the clay video) in an arch mask (`border-radius: 999px 999px var(--radius-lg)
+   var(--radius-lg)`), slight parallax on scroll (transform from scrollY, ≤ 20px). The
+   video itself lives in §3 — the hero shows its first frame so the scrolly "brings it to
+   life".
 2. **Marquee** — freelancer handles from data, `✳` separators, links to /u/handle.
-3. **How it works** — 3 rows with huge Fraunces numerals 01/02/03 (counter/reveal), title +
-   one line each: "Say what you can do / write your profile in plain words." · "Post what
-   you need / matches appear instantly, ranked by fit." · "Pay into escrow / money moves
-   only when the work is done." Each row `reveal` with stagger.
+3. **How it works (scrollytelling)** — 340vh section, sticky h-screen inner. Left: arch
+   with `static/hero.mp4` (all-intra encode for smooth seeking, muted playsinline
+   preload=auto, poster hero.jpg) **scrubbed by scroll progress** — lerped
+   `currentTime = p × duration` inside a rAF loop gated by IntersectionObserver. Right:
+   the 3 beats crossfade (grid-stacked, opacity/translateY), active index `floor(p × 3)`,
+   huge Fraunces numerals 01/02/03, plus 3 accent tick bars showing progress: "Say what
+   you can do / write your profile in plain words." · "Post what you need / matches appear
+   instantly, ranked by fit." · "Pay into escrow / money moves only when the work is
+   done." **Reduced motion: no pinning, no scrub — render the static 3-row `reveal` layout
+   instead.**
 4. **Freelancer wall** — responsive grid of profile cards: avatar, handle, 2-line about
    clamp, `data-cursor="View"`, reveal stagger.
 5. **Footer** — oversized muted `fl*` wordmark (clamp 6rem), links /jobs/new /login, "made
@@ -153,5 +159,6 @@ fields (keep existing logic/classes).
   except hero parallax (rAF-throttled, passive).
 - Focus-visible ring stays. Buttons are `<button>`/`<a>`, labeled icons.
 - Body text ≥ 0.95rem, contrast AA on both themes.
-- Video: `preload="metadata"`, poster, ≤ ~3 MB; pause when `document.hidden`.
+- Video: scrub video `preload="auto"` (seeking needs buffer), poster, ≤ ~3 MB; it only
+  advances via scroll so `document.hidden` needs no pause handling.
 - Fonts preloaded in app.html (`<link rel="preload" as="font">` × 2 main files).
