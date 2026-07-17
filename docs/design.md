@@ -122,16 +122,17 @@ row, CTA collapses to `+`.
    can actually do it. No bids. No browsing. Escrow until it's done." CTAs: btn-fl "Post a
    job" (magnet) + btn-ghost "Write your profile". Hero copy sits directly over the §0
    video background; the sub-paragraph gets a `.pane` (translucent canvas + backdrop-blur)
-   for AA contrast. Closes with a muted eyebrow: "scroll — the clay moves with you".
-0. **Page background (the canvas itself)** — `static/hero.mp4` (all-intra encode, 960px,
-   muted playsinline preload=auto, poster hero.jpg) as a `position: fixed; inset: 0;
-   z-index: -1` full-bleed layer behind the whole page (works because body's canvas bg
-   propagates to the root canvas, painting beneath negative-z children). **Scrubbed by
-   whole-page scroll progress**: lerped `currentTime = p × duration` in a continuous rAF
-   loop, paused on `visibilitychange`. Over it a theme-aware scrim: vertical gradient of
-   `color-mix(canvas Ns%, transparent)` — ~88% at top (nav), ~52% mid (vivid), ~92% at
-   bottom (footer) — so legibility adapts to light/dark automatically. **Reduced motion:
-   hero.jpg still instead of video, no scrub.**
+   for AA contrast. Closes with a muted eyebrow: "scroll to see how it works".
+0. **Page background (the canvas itself)** — `static/hero.mp4` (4s golden-hour clay loop,
+   960px, autoplay loop muted playsinline preload=auto, poster hero.jpg = exact frame 0) as
+   a `position: fixed; inset: 0; z-index: -1` full-bleed layer behind the whole page (works
+   because body's canvas bg propagates to the root canvas, painting beneath negative-z
+   children). The video **loops seamlessly forever**: it was generated (seedance 2.0 via
+   OpenRouter) with the identical image as `first_frame` and `last_frame`, camera locked,
+   all motion cyclical — regenerate the same way if it's ever replaced. Over it a
+   theme-aware scrim: vertical gradient of `color-mix(canvas Ns%, transparent)` — ~88% at
+   top (nav), ~52% mid (vivid), ~92% at bottom (footer) — so legibility adapts to
+   light/dark automatically. **Reduced motion: hero.jpg still instead of video.**
 2. **Marquee** — freelancer handles from data, `✳` separators, links to /u/handle. Opaque
    canvas band (grounding break between vivid moments).
 3. **How it works (scrollytelling)** — 340vh section, sticky h-screen inner; the fixed
@@ -166,6 +167,6 @@ fields (keep existing logic/classes).
   except hero parallax (rAF-throttled, passive).
 - Focus-visible ring stays. Buttons are `<button>`/`<a>`, labeled icons.
 - Body text ≥ 0.95rem, contrast AA on both themes.
-- Video: scrub video `preload="auto"` (seeking needs buffer), poster, ≤ ~3 MB; it only
-  advances via scroll so `document.hidden` needs no pause handling.
+- Video: seamless-loop video `preload="auto"`, poster, ≤ ~1 MB; browsers pause offscreen
+  autoplay video themselves so `document.hidden` needs no handling.
 - Fonts preloaded in app.html (`<link rel="preload" as="font">` × 2 main files).
