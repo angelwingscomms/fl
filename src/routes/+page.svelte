@@ -3,25 +3,6 @@
 
 	let { data } = $props();
 
-	let parallax_y = $state(0);
-
-	$effect(() => {
-		if (typeof window === 'undefined') return;
-		let raf = 0;
-		function on_scroll() {
-			raf = 0;
-			parallax_y = Math.max(-20, Math.min(20, window.scrollY * 0.08));
-		}
-		function on_scroll_throttled() {
-			if (!raf) raf = requestAnimationFrame(on_scroll);
-		}
-		window.addEventListener('scroll', on_scroll_throttled, { passive: true });
-		return () => {
-			window.removeEventListener('scroll', on_scroll_throttled);
-			cancelAnimationFrame(raf);
-		};
-	});
-
 	let scrolly_el = $state<HTMLElement>();
 	let scrub_el = $state<HTMLVideoElement>();
 	let step_i = $state(0);
@@ -33,29 +14,35 @@
 			return;
 		}
 		let raf = 0;
-		let live = false;
+		let live = true;
 		let t = 0;
 		function tick() {
-			if (scrolly_el) {
-				const r = scrolly_el.getBoundingClientRect();
-				const p = Math.max(0, Math.min(1, -r.top / (r.height - window.innerHeight)));
-				step_i = Math.min(2, Math.floor(p * 3));
+			const se = document.scrollingElement;
+			if (se) {
+				const p = Math.max(0, Math.min(1, se.scrollTop / (se.scrollHeight - window.innerHeight)));
 				const v = scrub_el;
 				if (v && v.duration) {
 					t += (p * (v.duration - 0.05) - t) * 0.15;
 					if (Math.abs(v.currentTime - t) > 0.004) v.currentTime = t;
 				}
 			}
+			if (scrolly_el) {
+				const r = scrolly_el.getBoundingClientRect();
+				const sp = Math.max(0, Math.min(1, -r.top / (r.height - window.innerHeight)));
+				step_i = Math.min(2, Math.floor(sp * 3));
+			}
 			if (live) raf = requestAnimationFrame(tick);
 		}
-		const io = new IntersectionObserver(([e]) => {
-			live = e.isIntersecting;
+		function on_visibility() {
+			live = !document.hidden;
 			cancelAnimationFrame(raf);
 			if (live) raf = requestAnimationFrame(tick);
-		});
-		if (scrolly_el) io.observe(scrolly_el);
+		}
+		document.addEventListener('visibilitychange', on_visibility);
+		raf = requestAnimationFrame(tick);
 		return () => {
-			io.disconnect();
+			live = false;
+			document.removeEventListener('visibilitychange', on_visibility);
 			cancelAnimationFrame(raf);
 		};
 	});
@@ -81,8 +68,24 @@
 	const marquee_list = $derived([...data.f, ...data.f]);
 </script>
 
-<section class="container-wide min-h-[88svh] grid gap-10 items-center py-16 lg:grid-cols-2">
-	<div>
+<div class="bg-fix" aria-hidden="true">
+	{#if scrolly_on}
+		<video
+			bind:this={scrub_el}
+			src="/hero.mp4"
+			poster="/hero.jpg"
+			muted
+			playsinline
+			preload="auto"
+		></video>
+	{:else}
+		<img src="/hero.jpg" alt="" />
+	{/if}
+	<div class="scrim"></div>
+</div>
+
+<section class="container-wide min-h-[92svh] flex items-center py-16">
+	<div class="max-w-2xl">
 		<p class="eyebrow mb-5">the anti-marketplace</p>
 		<h1>
 			<span class="block">
@@ -100,26 +103,20 @@
 				>.
 			</span>
 		</h1>
-		<p class="mt-6 text-[var(--color-text-muted)]" style="max-width: 34ch;">
+		<p class="pane mt-7 text-[var(--color-text)]" style="max-width: 38ch;">
 			Post a job and it's matched — by meaning, not keywords — to people who can actually do it.
 			No bids. No browsing. Escrow until it's done.
 		</p>
-		<div class="mt-8 flex flex-wrap gap-3">
+		<div class="mt-7 flex flex-wrap gap-3">
 			<a class="btn-fl" href="/jobs/new" use:magnet>Post a job <span class="arrow">→</span></a>
 			<a class="btn-ghost" href="/profile">Write your profile</a>
 		</div>
-	</div>
-
-	<div
-		class="relative aspect-[4/5] overflow-hidden"
-		style="border-radius: 999px 999px var(--radius-lg) var(--radius-lg); transform: translateY({parallax_y}px);"
-	>
-		<img src="/hero.jpg" alt="" class="w-full h-full object-cover" />
+		<p class="eyebrow mt-16 opacity-70">scroll — the clay moves with you</p>
 	</div>
 </section>
 
 {#if data.f.length >= 4}
-	<section class="py-10 border-y border-[var(--color-border)]">
+	<section class="py-10 border-y border-[var(--color-border)]" style="background: var(--color-canvas);">
 		<div class="marquee">
 			<div class="marquee-track">
 				{#each marquee_list as p, i (i)}
@@ -137,23 +134,9 @@
 
 {#if scrolly_on}
 	<section bind:this={scrolly_el} style="height: 340vh;">
-		<div class="sticky top-0 h-screen flex items-center overflow-hidden">
-			<div class="container-wide grid gap-8 items-center w-full lg:grid-cols-2 lg:gap-14">
-				<div
-					class="relative aspect-[4/5] w-full max-w-[44vh] mx-auto lg:max-w-[56vh] lg:mx-0 overflow-hidden"
-					style="border-radius: 999px 999px var(--radius-lg) var(--radius-lg);"
-				>
-					<video
-						bind:this={scrub_el}
-						class="w-full h-full object-cover"
-						src="/hero.mp4"
-						poster="/hero.jpg"
-						muted
-						playsinline
-						preload="auto"
-					></video>
-				</div>
-				<div>
+		<div class="sticky top-0 h-screen flex items-center">
+			<div class="container-wide w-full">
+				<div class="pane-lg max-w-xl">
 					<p class="eyebrow mb-8">how it works</p>
 					<div class="beats">
 						{#each steps as s, i (s.n)}
@@ -179,55 +162,97 @@
 		</div>
 	</section>
 {:else}
-	<section class="container-wide py-20">
-		<p class="eyebrow mb-10">how it works</p>
-		<div class="space-y-14">
-			{#each steps as s, i (s.n)}
-				<div
-					class="grid gap-4 sm:grid-cols-[auto_1fr] sm:items-center sm:gap-10"
-					use:reveal={{ delay: i * 120 }}
-				>
-					<span
-						style="font-family: var(--font-display); font-size: clamp(3.5rem, 9vw, 7rem); line-height: 1; color: var(--color-accent); opacity: 0.85;"
-						>{s.n}</span
+	<section class="py-20" style="background: color-mix(in srgb, var(--color-canvas) 88%, transparent);">
+		<div class="container-wide">
+			<p class="eyebrow mb-10">how it works</p>
+			<div class="space-y-14">
+				{#each steps as s, i (s.n)}
+					<div
+						class="grid gap-4 sm:grid-cols-[auto_1fr] sm:items-center sm:gap-10"
+						use:reveal={{ delay: i * 120 }}
 					>
-					<div>
-						<h3 class="text-xl sm:text-2xl mb-1" style="font-family: var(--font-display);">{s.h}</h3>
-						<p class="text-[var(--color-text-muted)]">{s.d}</p>
+						<span
+							style="font-family: var(--font-display); font-size: clamp(3.5rem, 9vw, 7rem); line-height: 1; color: var(--color-accent); opacity: 0.85;"
+							>{s.n}</span
+						>
+						<div>
+							<h3 class="text-xl sm:text-2xl mb-1" style="font-family: var(--font-display);">
+								{s.h}
+							</h3>
+							<p class="text-[var(--color-text-muted)]">{s.d}</p>
+						</div>
 					</div>
-				</div>
-			{/each}
+				{/each}
+			</div>
 		</div>
 	</section>
 {/if}
 
 {#if data.f.length}
-	<section class="container-wide py-20">
-		<p class="eyebrow mb-10">freelancers on fl</p>
-		<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-			{#each data.f as p, i (p.n)}
-				<a
-					class="card-fl interactive p-5 flex gap-3 items-start"
-					href="/u/{p.n}"
-					data-cursor="View"
-					use:reveal={{ delay: (i % 6) * 70 }}
-				>
-					{#if p.a}
-						<img src="/i/{p.a}" alt="" class="avatar avatar-48" />
-					{:else}
-						<span class="avatar avatar-48">{p.n[0]}</span>
-					{/if}
-					<div class="min-w-0">
-						<h3 class="font-semibold" style="font-family: var(--font-sans);">{p.n}</h3>
-						<p class="text-sm text-[var(--color-text-muted)] line-clamp-2">{p.t}</p>
-					</div>
-				</a>
-			{/each}
+	<section class="py-20" style="background: color-mix(in srgb, var(--color-canvas) 88%, transparent);">
+		<div class="container-wide">
+			<p class="eyebrow mb-10">freelancers on fl</p>
+			<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+				{#each data.f as p, i (p.n)}
+					<a
+						class="card-fl interactive p-5 flex gap-3 items-start"
+						href="/u/{p.n}"
+						data-cursor="View"
+						use:reveal={{ delay: (i % 6) * 70 }}
+					>
+						{#if p.a}
+							<img src="/i/{p.a}" alt="" class="avatar avatar-48" />
+						{:else}
+							<span class="avatar avatar-48">{p.n[0]}</span>
+						{/if}
+						<div class="min-w-0">
+							<h3 class="font-semibold" style="font-family: var(--font-sans);">{p.n}</h3>
+							<p class="text-sm text-[var(--color-text-muted)] line-clamp-2">{p.t}</p>
+						</div>
+					</a>
+				{/each}
+			</div>
 		</div>
 	</section>
 {/if}
 
 <style>
+	.bg-fix {
+		position: fixed;
+		inset: 0;
+		z-index: -1;
+	}
+	.bg-fix video,
+	.bg-fix img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.scrim {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(
+			to bottom,
+			color-mix(in srgb, var(--color-canvas) 88%, transparent),
+			color-mix(in srgb, var(--color-canvas) 52%, transparent) 28%,
+			color-mix(in srgb, var(--color-canvas) 52%, transparent) 72%,
+			color-mix(in srgb, var(--color-canvas) 92%, transparent)
+		);
+	}
+	.pane,
+	.pane-lg {
+		background: color-mix(in srgb, var(--color-canvas) 68%, transparent);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+		border-radius: var(--radius-lg);
+	}
+	.pane {
+		padding: 1rem 1.25rem;
+	}
+	.pane-lg {
+		padding: 2.5rem;
+	}
 	.beats {
 		display: grid;
 	}

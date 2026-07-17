@@ -120,24 +120,31 @@ row, CTA collapses to `+`.
    translateY 110% → 0, 80ms stagger): `Work finds` newline `the <em>worker</em>.` Sub
    (max-w 34ch): "Post a job and it's matched — by meaning, not keywords — to people who
    can actually do it. No bids. No browsing. Escrow until it's done." CTAs: btn-fl "Post a
-   job" (magnet) + btn-ghost "Write your profile". Media: `static/hero.jpg` still (frame 0
-   of the clay video) in an arch mask (`border-radius: 999px 999px var(--radius-lg)
-   var(--radius-lg)`), slight parallax on scroll (transform from scrollY, ≤ 20px). The
-   video itself lives in §3 — the hero shows its first frame so the scrolly "brings it to
-   life".
-2. **Marquee** — freelancer handles from data, `✳` separators, links to /u/handle.
-3. **How it works (scrollytelling)** — 340vh section, sticky h-screen inner. Left: arch
-   with `static/hero.mp4` (all-intra encode for smooth seeking, muted playsinline
-   preload=auto, poster hero.jpg) **scrubbed by scroll progress** — lerped
-   `currentTime = p × duration` inside a rAF loop gated by IntersectionObserver. Right:
-   the 3 beats crossfade (grid-stacked, opacity/translateY), active index `floor(p × 3)`,
-   huge Fraunces numerals 01/02/03, plus 3 accent tick bars showing progress: "Say what
-   you can do / write your profile in plain words." · "Post what you need / matches appear
-   instantly, ranked by fit." · "Pay into escrow / money moves only when the work is
-   done." **Reduced motion: no pinning, no scrub — render the static 3-row `reveal` layout
-   instead.**
+   job" (magnet) + btn-ghost "Write your profile". Hero copy sits directly over the §0
+   video background; the sub-paragraph gets a `.pane` (translucent canvas + backdrop-blur)
+   for AA contrast. Closes with a muted eyebrow: "scroll — the clay moves with you".
+0. **Page background (the canvas itself)** — `static/hero.mp4` (all-intra encode, 960px,
+   muted playsinline preload=auto, poster hero.jpg) as a `position: fixed; inset: 0;
+   z-index: -1` full-bleed layer behind the whole page (works because body's canvas bg
+   propagates to the root canvas, painting beneath negative-z children). **Scrubbed by
+   whole-page scroll progress**: lerped `currentTime = p × duration` in a continuous rAF
+   loop, paused on `visibilitychange`. Over it a theme-aware scrim: vertical gradient of
+   `color-mix(canvas Ns%, transparent)` — ~88% at top (nav), ~52% mid (vivid), ~92% at
+   bottom (footer) — so legibility adapts to light/dark automatically. **Reduced motion:
+   hero.jpg still instead of video, no scrub.**
+2. **Marquee** — freelancer handles from data, `✳` separators, links to /u/handle. Opaque
+   canvas band (grounding break between vivid moments).
+3. **How it works (scrollytelling)** — 340vh section, sticky h-screen inner; the fixed
+   video behind is at its most visible here. A `.pane-lg` glass panel (translucent canvas
+   68% + blur, hairline border) holds the 3 beats crossfading (grid-stacked,
+   opacity/translateY), active index `floor(p_section × 3)`, huge Fraunces numerals
+   01/02/03, plus 3 accent tick bars: "Say what you can do / write your profile in plain
+   words." · "Post what you need / matches appear instantly, ranked by fit." · "Pay into
+   escrow / money moves only when the work is done." **Reduced motion: no pinning — the
+   static 3-row `reveal` layout on a near-opaque band.**
 4. **Freelancer wall** — responsive grid of profile cards: avatar, handle, 2-line about
-   clamp, `data-cursor="View"`, reveal stagger.
+   clamp, `data-cursor="View"`, reveal stagger. Section sits on a near-opaque
+   (color-mix 88%) canvas band — the page settles down toward the footer.
 5. **Footer** — oversized muted `fl*` wordmark (clamp 6rem), links /jobs/new /login, "made
    with embeddings".
 
