@@ -43,7 +43,7 @@
 		</ul>
 	{:else}
 		<div class="card-fl p-6 text-center" use:reveal>
-			<p class="text-[var(--color-text-muted)]">no chats yet — matches start when you say hi.</p>
+			<p class="text-[var(--color-text-muted)]">no chats yet.</p>
 		</div>
 	{/if}
 </section>
