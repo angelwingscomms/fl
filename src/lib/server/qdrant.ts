@@ -44,7 +44,7 @@ export async function ensure_coll(): Promise<void> {
 }
 
 export async function get(ids: string[], with_vector = false): Promise<Point[]> {
-	const j = await qd('POST', `/collections/${COLL}/points/retrieve`, {
+	const j = await qd('POST', `/collections/${COLL}/points`, {
 		ids,
 		with_payload: true,
 		with_vector

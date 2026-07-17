@@ -16,12 +16,6 @@ function mock_qdrant() {
 	global.fetch = vi.fn(async (url: string | URL, init?: RequestInit) => {
 		const u = String(url);
 		const body = init?.body ? JSON.parse(String(init.body)) : {};
-		if (u.includes('/points/retrieve')) {
-			const result = (body.ids as string[])
-				.filter((id) => store.has(id))
-				.map((id) => ({ id, payload: store.get(id)!.payload }));
-			return ok(result);
-		}
 		if (u.includes('/points/payload')) {
 			for (const id of body.points as string[]) {
 				const cur = store.get(id);
@@ -45,6 +39,12 @@ function mock_qdrant() {
 			return ok({ points });
 		}
 		if (u.includes('/points/query')) return ok({ points: [] });
+		if (u.endsWith('/points') && Array.isArray(body.ids)) {
+			const result = (body.ids as string[])
+				.filter((id) => store.has(id))
+				.map((id) => ({ id, payload: store.get(id)!.payload }));
+			return ok(result);
+		}
 		if (u.endsWith('/points')) {
 			for (const p of body.points as { id: string; payload: Record<string, unknown>; vector?: number[] }[])
 				store.set(p.id, { payload: p.payload, vector: p.vector });

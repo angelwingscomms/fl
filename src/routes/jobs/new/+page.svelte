@@ -8,11 +8,11 @@
 <form method="POST" class="space-y-5 max-w-xl">
 	<label class="block space-y-1.5">
 		<span class="eyebrow">Title</span>
-		<input name="title" class="field-fl" required />
+		<input name="t" class="field-fl" required />
 	</label>
 	<label class="block space-y-1.5">
 		<span class="eyebrow">Description</span>
-		<textarea name="description" rows="8" class="field-fl"></textarea>
+		<textarea name="d" rows="8" class="field-fl"></textarea>
 	</label>
 	<button class="btn-fl">Post</button>
 </form>

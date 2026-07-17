@@ -75,3 +75,514 @@ Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with glo
     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 595 |  @layer base {
 596 |    *,	*::before,	*::after {
+7:32:55 AM [vite-plugin-svelte] src/routes/profile/+page.svelte:15:35 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
+https://svelte.dev/e/state_referenced_locally
+7:32:55 AM [vite-plugin-svelte] src/routes/profile/+page.svelte:20:25 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
+https://svelte.dev/e/state_referenced_locally
+7:32:55 AM [vite-plugin-svelte] src/routes/profile/+page.svelte:21:39 This reference only captures the initial value of `p`. Did you mean to reference it inside a derived instead?
+https://svelte.dev/e/state_referenced_locally
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+592 |    }
+593 |  }
+594 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+595 |  @layer base {
+596 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+592 |    }
+593 |  }
+594 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+595 |  @layer base {
+596 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+592 |    }
+593 |  }
+594 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+595 |  @layer base {
+596 |    *,	*::before,	*::after {
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+592 |    }
+593 |  }
+594 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+595 |  @layer base {
+596 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+592 |    }
+593 |  }
+594 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+595 |  @layer base {
+596 |    *,	*::before,	*::after {
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+592 |    }
+593 |  }
+594 |  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&disp...
+    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+595 |  @layer base {
+596 |    *,	*::before,	*::after {
+7:34:42 AM [vite] (client) hmr update /src/routes/layout.css
+7:34:42 AM [vite] (ssr) page reload src/routes/layout.css
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:34:58 AM [vite] (client) page reload src/app.html
+7:34:58 AM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:35:15 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+7:35:15 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
+7:35:15 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+7:35:15 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
+7:35:15 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/10.js
+7:35:15 AM [vite] (client) page reload .svelte-kit/generated/client/app.js
+7:35:15 AM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+7:35:15 AM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
+7:35:15 AM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+7:35:15 AM [vite] (client) page reload .svelte-kit/generated/root.js
+7:35:15 AM [vite] (ssr) page reload .svelte-kit/generated/root.js
+7:35:15 AM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:35:51 AM [vite] (client) hmr update /src/routes/+layout.svelte, /src/routes/layout.css
+7:35:51 AM [vite] (ssr) page reload src/routes/+layout.svelte
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:36:56 AM [vite] (client) hmr update /src/routes/+page.svelte, /src/routes/layout.css
+7:36:56 AM [vite] (ssr) page reload src/routes/+page.svelte
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:37:14 AM [vite] (client) hmr update /src/routes/layout.css
+7:37:14 AM [vite] (ssr) page reload src/routes/layout.css
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:37:30 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
+7:37:30 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/10.js
+7:37:30 AM [vite] (client) page reload .svelte-kit/generated/client/app.js
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:37:38 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+7:37:38 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+7:37:38 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
+7:37:38 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
+7:37:38 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/10.js
+7:37:38 AM [vite] (client) page reload .svelte-kit/generated/client/app.js
+7:37:38 AM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+7:37:38 AM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
+7:37:38 AM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+7:37:38 AM [vite] (client) page reload .svelte-kit/generated/root.js
+7:37:38 AM [vite] (ssr) page reload .svelte-kit/generated/root.js
+7:37:38 AM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:37:54 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
+7:37:54 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/10.js
+7:37:54 AM [vite] (client) page reload .svelte-kit/generated/client/app.js
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:38:08 AM [vite] (client) hmr update /src/routes/layout.css
+7:38:08 AM [vite] (ssr) page reload src/routes/layout.css
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:38:22 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+7:38:22 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+7:38:22 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
+7:38:22 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
+7:38:22 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/10.js
+7:38:22 AM [vite] (client) page reload .svelte-kit/generated/client/app.js
+7:38:22 AM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+7:38:22 AM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
+7:38:22 AM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+7:38:22 AM [vite] (client) page reload .svelte-kit/generated/root.js
+7:38:22 AM [vite] (ssr) page reload .svelte-kit/generated/root.js
+7:38:22 AM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:38:31 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
+7:38:31 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/10.js
+7:38:31 AM [vite] (client) page reload .svelte-kit/generated/client/app.js
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:38:34 AM [vite] (client) hmr update /src/routes/+layout.svelte, /src/routes/layout.css
+7:38:34 AM [vite] (ssr) page reload src/routes/+layout.svelte
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:38:37 AM [vite] (client) hmr update /src/routes/+layout.svelte, /src/routes/layout.css
+7:38:37 AM [vite] (ssr) page reload src/routes/+layout.svelte
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:38:51 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+7:38:51 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+7:38:51 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
+7:38:51 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
+7:38:51 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/10.js
+7:38:51 AM [vite] (client) page reload .svelte-kit/generated/client/app.js
+7:38:51 AM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+7:38:51 AM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
+7:38:51 AM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+7:38:51 AM [vite] (client) page reload .svelte-kit/generated/root.js
+7:38:51 AM [vite] (ssr) page reload .svelte-kit/generated/root.js
+7:38:51 AM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:38:52 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+7:38:52 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+7:38:52 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
+7:38:52 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
+7:38:52 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/10.js
+7:38:52 AM [vite] (client) page reload .svelte-kit/generated/client/app.js
+7:38:52 AM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+7:38:52 AM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
+7:38:52 AM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+7:38:52 AM [vite] (client) page reload .svelte-kit/generated/root.js
+7:38:52 AM [vite] (ssr) page reload .svelte-kit/generated/root.js
+7:38:52 AM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:39:42 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+7:39:42 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+7:39:42 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
+7:39:42 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
+7:39:42 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/10.js
+7:39:42 AM [vite] (client) page reload .svelte-kit/generated/client/app.js
+7:39:42 AM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+7:39:42 AM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
+7:39:42 AM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+7:39:42 AM [vite] (client) page reload .svelte-kit/generated/root.js
+7:39:42 AM [vite] (ssr) page reload .svelte-kit/generated/root.js
+7:39:42 AM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:41:14 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+7:41:14 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+7:41:14 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
+7:41:14 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
+7:41:14 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/10.js
+7:41:14 AM [vite] (client) page reload .svelte-kit/generated/client/app.js
+7:41:14 AM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+7:41:14 AM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
+7:41:14 AM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+7:41:14 AM [vite] (client) page reload .svelte-kit/generated/root.js
+7:41:14 AM [vite] (ssr) page reload .svelte-kit/generated/root.js
+7:41:14 AM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:41:17 AM [vite] (client) page reload .svelte-kit/generated/client/app.js
+7:41:17 AM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+7:41:17 AM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
+7:41:17 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+7:41:17 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+7:41:17 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
+7:41:17 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
+7:41:17 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/10.js
+7:41:17 AM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+7:41:17 AM [vite] (client) page reload .svelte-kit/generated/root.js
+7:41:17 AM [vite] (ssr) page reload .svelte-kit/generated/root.js
+7:41:17 AM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:41:19 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+7:41:19 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+7:41:19 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
+7:41:19 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
+7:41:19 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/10.js
+7:41:19 AM [vite] (client) page reload .svelte-kit/generated/client/app.js
+7:41:19 AM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+7:41:19 AM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
+7:41:19 AM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+7:41:19 AM [vite] (client) page reload .svelte-kit/generated/root.js
+7:41:19 AM [vite] (ssr) page reload .svelte-kit/generated/root.js
+7:41:19 AM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:42:29 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+7:42:29 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+7:42:29 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
+7:42:29 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
+7:42:29 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/10.js
+7:42:29 AM [vite] (client) page reload .svelte-kit/generated/client/app.js
+7:42:29 AM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+7:42:29 AM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
+7:42:29 AM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+7:42:29 AM [vite] (client) page reload .svelte-kit/generated/root.js
+7:42:29 AM [vite] (ssr) page reload .svelte-kit/generated/root.js
+7:42:29 AM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:42:31 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+7:42:31 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+7:42:31 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
+7:42:31 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
+7:42:31 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/10.js
+7:42:31 AM [vite] (client) page reload .svelte-kit/generated/client/app.js
+7:42:31 AM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+7:42:31 AM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
+7:42:31 AM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+7:42:31 AM [vite] (client) page reload .svelte-kit/generated/root.js
+7:42:31 AM [vite] (ssr) page reload .svelte-kit/generated/root.js
+7:42:31 AM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
+7:42:34 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+7:42:34 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+7:42:34 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
+7:42:34 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
+7:42:34 AM [vite] (client) page reload .svelte-kit/generated/client/nodes/10.js
+7:42:34 AM [vite] (client) page reload .svelte-kit/generated/client/app.js
+7:42:34 AM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+7:42:34 AM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
+7:42:34 AM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+7:42:34 AM [vite] (client) page reload .svelte-kit/generated/root.js
+7:42:34 AM [vite] (ssr) page reload .svelte-kit/generated/root.js
+7:42:34 AM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
+
+[1;31m[500] GET /[0m
+Error: Cannot use relative URL (undefined/collections/fl/points/scroll) with global fetch — use `event.fetch` instead: https://svelte.dev/docs/kit/web-standards#fetch-apis
+    at globalThis.fetch (file:/home/ed/i/fl/node_modules/.pnpm/@sveltejs+kit@2.69.2_@sveltejs+vite-plugin-svelte@7.2.0_svelte@5.56.4_@typescript-eslin_01c0a5f555f86e8b46e6a4e479f16143/node_modules/@sveltejs/kit/src/exports/vite/dev/index.js:57:10)
+    at qd (src/lib/server/qdrant.ts:17:18)
+    at find (src/lib/server/qdrant.ts:68:18)
+    at load (src/routes/+page.server.ts:5:20)
