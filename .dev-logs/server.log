@@ -2,10 +2,8 @@
 > fl@0.0.1 dev /home/ed/i/fl
 > vite dev
 
-12:15:02 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
-12:15:02 PM [vite] (ssr) Re-optimizing dependencies because lockfile has changed
 
-  VITE v8.1.4  ready in 5253 ms
+  VITE v8.1.4  ready in 3142 ms
 
   ➜  Local:   http://localhost:2727/
   ➜  Network: use --host to expose
@@ -20,136 +18,17 @@ Using secrets defined in .dev.vars
   				For detailed instructions, refer to the Durable Objects section here: [4mhttps://developers.cloudflare.com/workers/wrangler/api#supported-bindings[0m
 
 
+Using secrets defined in .dev.vars
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1m				You have defined bindings to the following internal Durable Objects:[0m
+
+  				- {"name":"CHAT","class_name":"ChatRoom"}
+  				These will not work in local development, but they should work in production.
+  
+  				If you want to develop these locally, you can define your DO in a separate Worker, with a separate configuration file.
+  				For detailed instructions, refer to the Durable Objects section here: [4mhttps://developers.cloudflare.com/workers/wrangler/api#supported-bindings[0m
+
+
 workerd/server/server.c++:3354: warning: A DurableObjectNamespace in the config referenced the class "ChatRoom", but no such Durable Object class is exported from the worker. Please make sure the class name matches, it is exported, and the class extends 'DurableObject'. Attempts to call to this Durable Object class will fail at runtime, but historically this was not a startup-time error. Future versions of workerd may make this a startup-time error.
-12:26:06 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
-12:26:06 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
-12:26:06 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
-12:26:06 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
-12:26:06 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
-12:26:06 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
-12:26:06 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
-12:26:06 PM [vite] (client) page reload .svelte-kit/generated/root.js
-12:26:06 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
-12:26:06 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
-12:26:10 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
-12:26:10 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
-12:26:10 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
-12:26:10 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
-12:26:10 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
-12:26:10 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
-12:26:10 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
-12:26:10 PM [vite] (client) page reload .svelte-kit/generated/root.js
-12:26:10 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
-12:26:10 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
-12:26:14 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
-12:26:14 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
-12:26:14 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
-12:26:14 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
-12:26:14 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
-12:26:14 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
-12:26:14 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
-12:26:14 PM [vite] (client) page reload .svelte-kit/generated/root.js
-12:26:14 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
-12:26:14 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
-12:27:38 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
-12:27:38 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
-12:27:38 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
-12:27:38 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
-12:27:38 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
-12:27:38 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
-12:27:38 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
-12:27:38 PM [vite] (client) page reload .svelte-kit/generated/root.js
-12:27:38 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
-12:27:38 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
-12:27:42 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
-12:27:42 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
-12:27:42 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
-12:27:42 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
-12:27:42 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
-12:27:42 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
-12:27:42 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
-12:27:42 PM [vite] (client) page reload .svelte-kit/generated/root.js
-12:27:42 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
-12:27:42 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
-12:27:46 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
-12:27:46 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
-12:27:46 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
-12:27:46 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
-12:27:46 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
-12:27:46 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
-12:27:46 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
-12:27:46 PM [vite] (client) page reload .svelte-kit/generated/root.js
-12:27:46 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
-12:27:46 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
-12:28:14 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
-12:28:14 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
-12:28:14 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
-12:28:14 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
-12:28:14 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
-12:28:14 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
-12:28:14 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
-12:28:14 PM [vite] (client) page reload .svelte-kit/generated/root.js
-12:28:14 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
-12:28:14 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
-12:28:18 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
-12:28:18 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
-12:28:18 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
-12:28:18 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
-12:28:18 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
-12:28:18 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
-12:28:18 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
-12:28:18 PM [vite] (client) page reload .svelte-kit/generated/root.js
-12:28:18 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
-12:28:18 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
-12:28:22 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
-12:28:22 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
-12:28:22 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
-12:28:22 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
-12:28:22 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
-12:28:22 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
-12:28:22 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
-12:28:22 PM [vite] (client) page reload .svelte-kit/generated/root.js
-12:28:22 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
-12:28:22 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
-12:29:11 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
-12:29:11 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
-12:29:11 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
-12:29:11 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
-12:29:11 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
-12:29:11 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
-12:29:11 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
-12:29:11 PM [vite] (client) page reload .svelte-kit/generated/root.js
-12:29:11 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
-12:29:11 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
-12:29:15 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
-12:29:15 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
-12:29:15 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
-12:29:15 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
-12:29:15 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
-12:29:15 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
-12:29:15 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
-12:29:15 PM [vite] (client) page reload .svelte-kit/generated/root.js
-12:29:15 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
-12:29:15 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
-12:29:19 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
-12:29:19 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
-12:29:19 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
-12:29:19 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
-12:29:19 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
-12:29:19 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
-12:29:19 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
-12:29:19 PM [vite] (client) page reload .svelte-kit/generated/root.js
-12:29:19 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
-12:29:19 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
-12:34:00 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
-12:34:00 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
-12:34:00 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
-12:34:00 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/5.js
-12:34:00 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/8.js
-12:34:00 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
-12:34:00 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
-12:34:00 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
-12:34:00 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
-12:34:00 PM [vite] (client) page reload .svelte-kit/generated/root.js
-12:34:00 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
-12:34:01 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
+workerd/server/server.c++:3354: warning: A DurableObjectNamespace in the config referenced the class "ChatRoom", but no such Durable Object class is exported from the worker. Please make sure the class name matches, it is exported, and the class extends 'DurableObject'. Attempts to call to this Durable Object class will fail at runtime, but historically this was not a startup-time error. Future versions of workerd may make this a startup-time error.
+*** Fatal uncaught kj::Exception: workerd/util/sqlite.c++:844: failed: SENTRY_DO SQLite failed; NOSENTRY database is locked: SQLITE_BUSY (extended: SQLITE_BUSY_RECOVERY)
+stack: /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@33af68b /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2010925 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@206e2bc /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@206dc76 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@202b09c /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@202aaf2 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@1fe0a32 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@20680bf /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@206b415 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@1fb1339 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@5432855 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@5432d78 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@543082e /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@543062e /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@1f98d17 /usr/lib/libc.so.6@2abfb /usr/lib/libc.so.6@2acb4 /home/ed/i/fl/node_modules/.pnpm/@cloudflare+workerd-linux-64@1.20260708.1/node_modules/@cloudflare/workerd-linux-64/bin/workerd@1f98024
