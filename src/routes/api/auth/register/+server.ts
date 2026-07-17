@@ -12,6 +12,12 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 	if (await get_user_by_email(e)) throw error(400, 'email already registered');
 	const id = await create_pw_user(e, p);
 	const session = await encode_session({ id, name: e, email: e });
-	cookies.set('session', session, { path: '/', httpOnly: true, maxAge: 604800, sameSite: 'lax' });
+	cookies.set('session', session, {
+		path: '/',
+		httpOnly: true,
+		secure: true,
+		maxAge: 604800,
+		sameSite: 'lax'
+	});
 	return json({ ok: true });
 };

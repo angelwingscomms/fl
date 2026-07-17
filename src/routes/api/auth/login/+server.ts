@@ -15,6 +15,12 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 		name: r.user.n,
 		email: r.user.m
 	});
-	cookies.set('session', session, { path: '/', httpOnly: true, maxAge: 604800, sameSite: 'lax' });
+	cookies.set('session', session, {
+		path: '/',
+		httpOnly: true,
+		secure: true,
+		maxAge: 604800,
+		sameSite: 'lax'
+	});
 	return json({ ok: true });
 };

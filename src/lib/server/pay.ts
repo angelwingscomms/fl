@@ -19,9 +19,11 @@ export async function settle(reference: string): Promise<string | null> {
 		user_id: string;
 	};
 	const j = md.j;
-	await get([j]);
+	const job = (await get([j]))[0];
 
 	await upsert([{ id: ref_id, vector: ZERO(), payload: { s: 'r', u: md.user_id, j, e: r.amount } }]);
+	if (!job || job.payload.s !== 'j' || job.payload.y !== 'h')
+		return (job?.payload.y as string) ?? null;
 	await set_payload(j, { y: 'f', e: r.amount, r: reference });
 	return 'f';
 }

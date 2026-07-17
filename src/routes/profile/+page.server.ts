@@ -37,9 +37,7 @@ export const actions: Actions = {
 			return fail(400, { error: 'handle must be 2-30 lowercase letters, digits, or dashes', n, t, l: l.join('\n') });
 		const hit = await get_user_by_handle(n);
 		if (hit && hit.id !== uid) return fail(400, { error: 'handle taken', n, t, l: l.join('\n') });
-		const fields: Partial<User> = { n, t, l };
-		if (a) fields.a = a;
-		if (i.length) fields.i = i;
+		const fields: Partial<User> = { n, t, l, a, i };
 		await update_user(uid, fields);
 		const vec = await embed(`${n}\n${t}`, { OPENROUTER_KEY: env.OPENROUTER_KEY });
 		await update_vector(uid, vec);

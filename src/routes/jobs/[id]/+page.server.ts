@@ -56,7 +56,8 @@ export const actions: Actions = {
 		if (job.payload.y !== 'o') return fail(400, { error: 'job is not open' });
 		const f = await e.request.formData();
 		const fid = String(f.get('f') ?? '');
-		if (!fid) return fail(400, { error: 'freelancer required' });
+		if (!fid || fid === uid || !(await get_user(fid)))
+			return fail(400, { error: 'freelancer not found' });
 		await set_payload(id, { f: fid, y: 'h' });
 		return { ok: true };
 	},
@@ -76,8 +77,13 @@ export const actions: Actions = {
 		const job = await load_owned_job(uid, id);
 		const f = job.payload.f as string;
 		if (job.payload.y !== 'f' || !f) return fail(400, { error: 'nothing to release' });
-		await credit_user(f, job.payload.e as number);
 		await set_payload(id, { y: 'r' });
+		try {
+			await credit_user(f, job.payload.e as number);
+		} catch (err) {
+			await set_payload(id, { y: 'f' });
+			throw err;
+		}
 		return { ok: true };
 	}
 };

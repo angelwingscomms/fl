@@ -20,9 +20,7 @@ export function get_secret_key(): string {
 	const paystack_test = env.PAYSTACK_TEST;
 	const is_test =
 		paystack_test !== undefined && paystack_test !== null ? paystack_test === '.' : dev;
-	const key = is_test
-		? env.PAYSTACK_SECRET_KEY_TEST || env.PAYSTACK_SECRET_KEY
-		: env.PAYSTACK_SECRET_KEY_LIVE || env.PAYSTACK_SECRET_KEY;
+	const key = is_test ? env.PAYSTACK_SECRET_KEY_TEST : env.PAYSTACK_SECRET_KEY_LIVE;
 	return key || '';
 }
 

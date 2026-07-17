@@ -43,6 +43,7 @@ export async function GET(event: RequestEvent): Promise<Response> {
 	event.cookies.set('session', session, {
 		path: '/',
 		httpOnly: true,
+		secure: true,
 		maxAge: 604800,
 		sameSite: 'lax'
 	});

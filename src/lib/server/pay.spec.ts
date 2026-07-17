@@ -37,6 +37,7 @@ describe('settle', () => {
 		});
 		get.mockImplementation(async (ids: string[]) => {
 			if (ids[0] === 'uuid-ps_r2') return [];
+			if (ids[0] === 'job1') return [{ id: 'job1', payload: { s: 'j', y: 'h' } }];
 			return [];
 		});
 		const y = await settle('r2');
@@ -72,9 +73,30 @@ describe('settle', () => {
 			amount: 200000,
 			metadata: JSON.stringify({ j: 'job2', user_id: 'user2' })
 		});
-		get.mockResolvedValue([]);
+		get.mockImplementation(async (ids: string[]) => {
+			if (ids[0] === 'job2') return [{ id: 'job2', payload: { s: 'j', y: 'h' } }];
+			return [];
+		});
 		const y = await settle('r4');
 		expect(y).toBe('f');
 		expect(set_payload).toHaveBeenCalledWith('job2', { y: 'f', e: 200000, r: 'r4' });
+	});
+
+	it('new ref for a job that is not hired does not fund it', async () => {
+		paystack_verify.mockResolvedValue({
+			status: 'success',
+			reference: 'r5',
+			amount: 500000,
+			metadata: { j: 'job1', user_id: 'user1' }
+		});
+		get.mockImplementation(async (ids: string[]) => {
+			if (ids[0] === 'uuid-ps_r5') return [];
+			if (ids[0] === 'job1') return [{ id: 'job1', payload: { s: 'j', y: 'r' } }];
+			return [];
+		});
+		const y = await settle('r5');
+		expect(y).toBe('r');
+		expect(upsert).toHaveBeenCalled();
+		expect(set_payload).not.toHaveBeenCalled();
 	});
 });
