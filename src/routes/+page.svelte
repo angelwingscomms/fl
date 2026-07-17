@@ -4,7 +4,6 @@
 	let { data } = $props();
 
 	let scrolly_el = $state<HTMLElement>();
-	let scrub_el = $state<HTMLVideoElement>();
 	let step_i = $state(0);
 	let scrolly_on = $state(true);
 
@@ -15,17 +14,7 @@
 		}
 		let raf = 0;
 		let live = true;
-		let t = 0;
 		function tick() {
-			const se = document.scrollingElement;
-			if (se) {
-				const p = Math.max(0, Math.min(1, se.scrollTop / (se.scrollHeight - window.innerHeight)));
-				const v = scrub_el;
-				if (v && v.duration) {
-					t += (p * (v.duration - 0.05) - t) * 0.15;
-					if (Math.abs(v.currentTime - t) > 0.004) v.currentTime = t;
-				}
-			}
 			if (scrolly_el) {
 				const r = scrolly_el.getBoundingClientRect();
 				const sp = Math.max(0, Math.min(1, -r.top / (r.height - window.innerHeight)));
@@ -71,9 +60,10 @@
 <div class="bg-fix" aria-hidden="true">
 	{#if scrolly_on}
 		<video
-			bind:this={scrub_el}
 			src="/hero.mp4"
 			poster="/hero.jpg"
+			autoplay
+			loop
 			muted
 			playsinline
 			preload="auto"
@@ -111,7 +101,7 @@
 			<a class="btn-fl" href="/jobs/new" use:magnet>Post a job <span class="arrow">→</span></a>
 			<a class="btn-ghost" href="/profile">Write your profile</a>
 		</div>
-		<p class="eyebrow mt-16 opacity-70">scroll — the clay moves with you</p>
+		<p class="eyebrow mt-16 opacity-70">scroll to see how it works</p>
 	</div>
 </section>
 
