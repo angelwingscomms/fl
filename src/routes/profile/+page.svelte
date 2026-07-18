@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { untrack } from 'svelte';
 	import { reveal, magnet } from '$lib/motion';
+	import Stt from '$lib/stt.svelte';
 
 	let { data, form } = $props();
 	let p = $derived(data.p ?? { n: '', t: '', l: '', b: 0, a: '', i: [] });
@@ -74,7 +75,10 @@
 		</label>
 
 		<label class="block space-y-1.5">
-			<span class="eyebrow">about — what can you do?</span>
+			<span class="eyebrow flex items-center justify-between">
+				about — what can you do?
+				<Stt bind:value={p.t} context="editing my profile" />
+			</span>
 			<textarea name="t" rows="8" class="field-fl">{p.t}</textarea>
 		</label>
 

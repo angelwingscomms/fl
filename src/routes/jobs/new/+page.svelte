@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { reveal, magnet } from '$lib/motion';
+	import Stt from '$lib/stt.svelte';
 	let { form } = $props();
+	let d = $state('');
 </script>
 
 <section class="container-fl py-16">
@@ -17,8 +19,11 @@
 			<input name="t" class="field-fl" required />
 		</label>
 		<label class="block space-y-1.5">
-			<span class="eyebrow">description</span>
-			<textarea name="d" rows="8" class="field-fl"></textarea>
+			<span class="eyebrow flex items-center justify-between">
+				description
+				<Stt bind:value={d} context="posting a job" />
+			</span>
+			<textarea name="d" rows="8" class="field-fl" bind:value={d}></textarea>
 		</label>
 		<button class="btn-fl" use:magnet>post <span class="arrow">→</span></button>
 	</form>

@@ -54,9 +54,11 @@
 		}
 	];
 
-	const marquee_list = $derived([...data.f, ...data.f]);
+	// ponytail: marquee removed with the users section
+	// const marquee_list = $derived([...data.f, ...data.f]);
 </script>
 
+<!-- ponytail: full-screen background video disabled for now
 <div class="bg-fix" aria-hidden="true">
 	{#if scrolly_on}
 		<video
@@ -73,6 +75,7 @@
 	{/if}
 	<div class="scrim"></div>
 </div>
+-->
 
 <section class="container-wide min-h-[92svh] flex items-center py-16">
 	<div class="max-w-2xl">
@@ -105,6 +108,7 @@
 	</div>
 </section>
 
+<!-- ponytail: scrolling users marquee removed
 {#if data.f.length >= 4}
 	<section class="py-10 border-y border-[var(--color-border)]" style="background: var(--color-canvas);">
 		<div class="marquee">
@@ -121,6 +125,7 @@
 		</div>
 	</section>
 {/if}
+-->
 
 {#if scrolly_on}
 	<section bind:this={scrolly_el} style="height: 340vh;">
@@ -178,6 +183,7 @@
 	</section>
 {/if}
 
+<!-- ponytail: "freelancers on fl" grid removed
 {#if data.f.length}
 	<section class="py-20" style="background: color-mix(in srgb, var(--color-canvas) 88%, transparent);">
 		<div class="container-wide">
@@ -205,30 +211,28 @@
 		</div>
 	</section>
 {/if}
+-->
+
+<section class="py-24" style="background: color-mix(in srgb, var(--color-canvas) 86%, transparent);">
+	<div class="container-wide flex flex-col items-start gap-8">
+		<p class="eyebrow">no noise</p>
+		<p
+			class="text-3xl sm:text-5xl leading-tight max-w-3xl"
+			style="font-family: var(--font-display);"
+		>
+			No feed. No followers. No <em>scrolling past</em> people who could've been the perfect hire.
+		</p>
+		<p class="pane text-[var(--color-text)]" style="max-width: 46ch;">
+			Just work that finds the right person — and money that only moves when it's earned.
+		</p>
+		<div class="mt-2 flex flex-wrap gap-3">
+			<a class="btn-fl" href="/jobs/new" use:magnet>Post a job <span class="arrow">→</span></a>
+			<a class="btn-ghost" href="/profile">Write your profile</a>
+		</div>
+	</div>
+</section>
 
 <style>
-	.bg-fix {
-		position: fixed;
-		inset: 0;
-		z-index: -1;
-	}
-	.bg-fix video,
-	.bg-fix img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-	.scrim {
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(
-			to bottom,
-			color-mix(in srgb, var(--color-canvas) 88%, transparent),
-			color-mix(in srgb, var(--color-canvas) 52%, transparent) 28%,
-			color-mix(in srgb, var(--color-canvas) 52%, transparent) 72%,
-			color-mix(in srgb, var(--color-canvas) 92%, transparent)
-		);
-	}
 	.pane,
 	.pane-lg {
 		background: color-mix(in srgb, var(--color-canvas) 68%, transparent);
