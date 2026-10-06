@@ -1,31 +1,19 @@
 # deploy
 
-first deploy (order matters — fl worker must exist before pswh):
+deploys run on push to `master` via Cloudflare Workers Builds
+(build `pnpm run build`, which also runs `scripts/patch-worker.mjs`; deploy `pnpm exec wrangler deploy`).
+
+worker secrets (values in `.env`), set once:
 
 ```sh
-pnpm exec vite build
-npx wrangler deploy
-
-# plain worker secrets (values in .dev.vars)
 for k in QDRANT_URL QDRANT_KEY OPENROUTER_KEY GOOGLE_ID GOOGLE_SECRET SECRET PAYSTACK_SECRET_KEY_TEST PAYSTACK_TEST; do
-  grep "^$k=" .dev.vars | cut -d= -f2- | npx wrangler secret put "$k"
+  grep "^$k=" .env | cut -d= -f2- | pnpm exec wrangler secret put "$k"
 done
-# when going live: npx wrangler secret put PAYSTACK_SECRET_KEY_LIVE, then set PAYSTACK_TEST to empty
-
-# pswh (webhook router) — fl binding already in ~/i/pswh/wrangler.jsonc
-cd ~/i/pswh && npx wrangler deploy
 ```
 
 webhook smoke test (after both deploys): follow the curl test in
 `~/.config/opencode/instructions/cloudflare-deploy.md` (HMAC-SHA512 body sig with
 the paystack test secret, POST to pswh, expect `{"received":true}` forwarded from fl).
-
-CI deploy-on-push: `.github/workflows/deploy.yml` needs repo secret `CLOUDFLARE_API_TOKEN`
-(scoped: Workers Scripts Edit). mint it in the CF dash, then:
-
-```sh
-gh secret set CLOUDFLARE_API_TOKEN --repo angelwingscomms/fl
-```
 
 R2 bucket `fl-img` and google oauth redirect `https://fl.<subdomain>.workers.dev/auth/google/callback`
 must exist / be registered once.
@@ -37,12 +25,6 @@ message delivery, with a 4s poll fallback. `main` in `wrangler.jsonc` is the
 adapter's generated `.svelte-kit/cloudflare/_worker.js` — the adapter-cloudflare v7
 writes its bundle to `main`, so a hand-written `main` is NOT possible. the `ChatRoom`
 class + SvelteKit passthrough are injected **after build** by `scripts/patch-worker.mjs`.
-
-```sh
-pnpm exec vite build          # regenerates .svelte-kit/cloudflare/_worker.js
-node scripts/patch-worker.mjs  # renames default export, appends ChatRoom DO
-npx wrangler deploy        # uploads; migration v1 (new_sqlite_classes) creates the DO
-```
 
 secrets (incl. `SECRET` for WS cookie auth) are set via `wrangler secret put` (see above).
 the WS route auth lives in `src/routes/api/chat/ws/+server.ts` (decodes session, routes the

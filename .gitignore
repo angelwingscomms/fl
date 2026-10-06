@@ -25,3 +25,5 @@ vite.config.ts.timestamp-*
 # Playwright
 test-results
 .vw/
+.log
+.dev-logs

@@ -4,7 +4,6 @@ const BASE = process.env.E2E_BASE ?? 'http://localhost:4173';
 
 async function login_ui(page: any, email: string, pw: string) {
 	await page.goto('/login');
-	await page.getByText('need an account').click();
 	await page.fill('input[type=email]', email);
 	await page.fill('input[type=password]', pw);
 	await page.click('button[type=submit]');
@@ -22,7 +21,10 @@ test('chat page opens ws and sends a message', async ({ request, page, context }
 	const b_login = await pw_request.newContext({ baseURL: BASE });
 	await b_login.post('/api/auth/login', { data: { e: email_b, p: pw } });
 	await b_login
-		.post('/profile', { form: { n: `peer-${Date.now()}`, t: 'I do the work that is needed.' } })
+		.post('/profile', {
+			form: { n: `peer-${Date.now()}`, t: 'I do the work that is needed.' },
+			headers: { origin: BASE }
+		})
 		.catch(() => {});
 	await b_login.dispose();
 
