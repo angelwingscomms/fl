@@ -21,7 +21,7 @@
 		<label class="block space-y-1.5">
 			<span class="eyebrow flex items-center justify-between">
 				description
-				<Stt bind:value={d} context="posting a job" />
+				<Stt bind:value={d} />
 			</span>
 			<textarea name="d" rows="8" class="field-fl" bind:value={d}></textarea>
 		</label>

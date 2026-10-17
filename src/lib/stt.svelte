@@ -1,71 +1,24 @@
 <script lang="ts">
-	// Replicates @renjfk/opencode-voice STT behavior in-browser:
-	// press mic to record (continuous 16kHz mono PCM, chunked as it grows),
-	// press again to stop + transcribe via /api/stt (OpenRouter Parakeet),
-	// then normalize + paste into the bound textarea.
+	import { start_recording, transcribe_pcm } from '$lib/whistle';
+	// Press mic to record 16kHz mono PCM, press again to stop and transcribe
+	// in the browser with Cactus Whistle (whistle.ts), then paste into the bound textarea.
 	interface Props {
 		value?: string;
 		ontext?: (s: string) => void;
-		context?: string;
 	}
-	let { value = $bindable(''), ontext, context = '' }: Props = $props();
+	let { value = $bindable(''), ontext }: Props = $props();
 
 	let recording = $state(false);
 	let busy = $state(false);
 	let err = $state('');
 	let status = $state('');
 
-	let ctx: AudioContext | null = null;
-	let stream: MediaStream | null = null;
-	let proc: ScriptProcessorNode | null = null;
-	let chunks: Float32Array[] = [];
-	let sampleRate = 16000;
-
-	function encodeWav(samples: Float32Array, rate: number): string {
-		const buf = new ArrayBuffer(44 + samples.length * 2);
-		const dv = new DataView(buf);
-		const ws = (o: number, s: string) => {
-			for (let i = 0; i < s.length; i++) dv.setUint8(o + i, s.charCodeAt(i));
-		};
-		ws(0, 'RIFF');
-		dv.setUint32(4, 36 + samples.length * 2, true);
-		ws(8, 'WAVE');
-		ws(12, 'fmt ');
-		dv.setUint32(16, 16, true);
-		dv.setUint16(20, 1, true);
-		dv.setUint16(22, 1, true);
-		dv.setUint32(24, rate, true);
-		dv.setUint32(28, rate * 2, true);
-		dv.setUint16(32, 2, true);
-		dv.setUint16(34, 16, true);
-		ws(36, 'data');
-		dv.setUint32(40, samples.length * 2, true);
-		let o = 44;
-		for (let i = 0; i < samples.length; i++) {
-			let s = Math.max(-1, Math.min(1, samples[i]));
-			dv.setInt16(o, s < 0 ? s * 0x8000 : s * 0x7fff, true);
-			o += 2;
-		}
-		let bin = '';
-		const bytes = new Uint8Array(buf);
-		for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
-		return btoa(bin);
-	}
+	let rec: { stop: () => Promise<Float32Array> } | undefined;
 
 	async function start() {
 		err = '';
 		try {
-			stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-			ctx = new AudioContext({ sampleRate });
-			const src = ctx.createMediaStreamSource(stream);
-			proc = ctx.createScriptProcessor(4096, 1, 1);
-			chunks = [];
-			proc.onaudioprocess = (e) => {
-				// chunked capture: append each buffer so extended speech keeps growing
-				chunks.push(new Float32Array(e.inputBuffer.getChannelData(0)));
-			};
-			src.connect(proc);
-			proc.connect(ctx.destination);
+			rec = await start_recording();
 			recording = true;
 			status = 'listening…';
 		} catch (e) {
@@ -73,47 +26,20 @@
 		}
 	}
 
-	function stop() {
-		recording = false;
-		status = 'transcribing…';
-		proc?.disconnect();
-		proc = null;
-		stream?.getTracks().forEach((t) => t.stop());
-		stream = null;
-		ctx?.close();
-		ctx = null;
-	}
-
-	async function transcribeAndPaste() {
-		const total = chunks.reduce((n, c) => n + c.length, 0);
-		if (!total) {
+	async function paste(pcm: Float32Array) {
+		if (!pcm.length) {
 			status = '';
 			return;
 		}
-		const all = new Float32Array(total);
-		let o = 0;
-		for (const c of chunks) {
-			all.set(c, o);
-			o += c.length;
-		}
-		const wav = encodeWav(all, sampleRate);
-		chunks = [];
 		try {
-			const r = await fetch('/api/stt', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ audio: wav, context })
-			});
-			if (!r.ok) {
-				const j = await r.json().catch(() => ({}));
-				throw new Error(j.message || `STT ${r.status}`);
-			}
-			const { text } = (await r.json()) as { text: string };
+			const text = (await transcribe_pcm(pcm)).trim();
 			if (!text) {
 				status = 'no speech detected';
 				return;
 			}
-			const next = value ? value + (value.endsWith(' ') || value.endsWith('\n') ? '' : ' ') + text : text;
+			const next = value
+				? value + (value.endsWith(' ') || value.endsWith('\n') ? '' : ' ') + text
+				: text;
 			value = next;
 			ontext?.(next);
 			status = 'done';
@@ -129,8 +55,9 @@
 		if (busy) return;
 		if (recording) {
 			busy = true;
-			stop();
-			await transcribeAndPaste();
+			recording = false;
+			status = 'transcribing…';
+			await paste(await rec!.stop());
 		} else {
 			await start();
 		}

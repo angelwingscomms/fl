@@ -77,7 +77,7 @@
 		<label class="block space-y-1.5">
 			<span class="eyebrow flex items-center justify-between">
 				about — what can you do?
-				<Stt bind:value={p.t} context="editing my profile" />
+				<Stt bind:value={p.t} />
 			</span>
 			<textarea name="t" rows="8" class="field-fl">{p.t}</textarea>
 		</label>
@@ -108,8 +108,7 @@
 					>
 				</div>
 			{/each}
-			<button type="button" class="add-row" onclick={() => (links = add(links))}>+ add link</button
-			>
+			<button type="button" class="add-row" onclick={() => (links = add(links))}>+ add link</button>
 		</div>
 
 		<div class="space-y-2">
